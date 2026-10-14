@@ -1,0 +1,3939 @@
+<!DOCTYPE html>
+<html lang="ru" class="motion-ready">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AROMA EXCELLENCE — Оригинальная парфюмерия и подарочные наборы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@85..115,400..900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f5f4ef;
+      --paper-alt: #eceae2;
+      --ink: #0f0f0e;
+      --ink-muted: #62615d;
+      --card-dark: #141518;
+      --card-cream: #f9f6f1;
+      --amber: #fcdd71;
+      --gold: #d49b35;
+      --ruby: #9e222b;
+      --rose: #f3c8c4;
+      --sapphire: #1a273a;
+      --accent: #7b3cff;
+
+      --nav-bg: #ffffff;
+      --nav-line: rgba(15, 15, 14, 0.08);
+      --nav-rule: rgba(15, 15, 14, 0.16);
+      --nav-search: #e8e7e2;
+      --r: 20px;
+
+      --display: "Archivo", "Arial Black", Impact, system-ui, sans-serif;
+      --sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+      --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.9'/%3E%3C/svg%3E");
+
+      /* Clean High-Res Perfume Photography */
+      --img-devotion: url("https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1000&q=85");
+      --img-idole: url("https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1000&q=85");
+      --img-gucci: url("https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=1000&q=85");
+      --img-rabanne: url("https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=1000&q=85");
+      --img-homme: url("https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=1000&q=85");
+      --img-estee: url("https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1000&q=85");
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+    }
+
+    body {
+      background-color: var(--paper);
+      overflow-x: hidden;
+      line-height: 1.45;
+    }
+
+    body.menu-locked,
+    body.modal-locked {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    /* ==========================================
+       FLOATING HEADER CARD
+       ========================================== */
+    .hdr {
+      position: fixed;
+      top: 0;
+      left: 32px;
+      right: 32px;
+      height: 132px;
+      background: var(--nav-bg);
+      border-radius: 0 0 var(--r) var(--r);
+      box-shadow: 0 0 0 1px var(--nav-line), 0 18px 40px -24px rgba(15, 15, 14, 0.28);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+    }
+
+    .util {
+      height: 42px;
+      border-bottom: 1px solid var(--nav-line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      font-size: 12.5px;
+      color: var(--ink-muted);
+    }
+
+    .util-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .util-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .util-badge .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #16a34a;
+      box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.18);
+    }
+
+    .util-rule {
+      width: 1px;
+      height: 18px;
+      background: var(--nav-rule);
+    }
+
+    .util-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .unav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-weight: 500;
+    }
+
+    .unav a:hover {
+      color: var(--ink);
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      background: var(--nav-search);
+      padding: 3px;
+      border-radius: 999px;
+      gap: 2px;
+    }
+
+    .lang-btn {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 999px;
+      transition: all 0.2s ease;
+      color: var(--ink-muted);
+    }
+
+    .lang-btn.active {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .hdr-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .brand-title {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: 27px;
+      letter-spacing: -0.05em;
+      line-height: 1;
+      text-transform: uppercase;
+      font-stretch: 90%;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .brand-star {
+      width: 10px;
+      height: 10px;
+      fill: var(--gold);
+      transform: translateY(-6px);
+    }
+
+    .brand-sub {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 14.5px;
+      font-weight: 500;
+    }
+
+    .nav-link-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.2s;
+    }
+
+    .nav-link-pill:hover {
+      opacity: 0.7;
+    }
+
+    .nav-circle-arr {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hdr-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .orbit-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--paper);
+      border: 1px solid var(--nav-line);
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .orbit-trigger:hover {
+      background: #e8e7e2;
+    }
+
+    .orbit-label-stack {
+      position: relative;
+      height: 18px;
+      overflow: hidden;
+      display: inline-block;
+      min-width: 58px;
+      text-align: left;
+    }
+
+    .orbit-label-stack span {
+      display: block;
+      line-height: 18px;
+      transition: transform 0.55s cubic-bezier(0.65, 0, 0.2, 1);
+    }
+
+    html.menu-open .orbit-label-stack span:first-child {
+      transform: translateY(-100%);
+    }
+
+    html.menu-open .orbit-label-stack span:last-child {
+      transform: translateY(-100%);
+      color: var(--accent);
+    }
+
+    .orbit-glyph-wrap {
+      position: relative;
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .orbit-glyph {
+      width: 28px;
+      height: 28px;
+      transition: opacity 0.25s ease, transform 0.4s ease;
+    }
+
+    .orbit-close-x {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: rotate(-90deg) scale(0.3);
+      transition: opacity 0.35s ease 0.1s, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+    }
+
+    html.menu-open .orbit-glyph {
+      opacity: 0;
+      transform: scale(0.4);
+    }
+
+    html.menu-open .orbit-close-x {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+
+    .cta-combo {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .cta-pill {
+      height: 52px;
+      padding: 0 22px;
+      border-radius: 18px;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 600;
+      font-size: 14.5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s;
+      white-space: nowrap;
+    }
+
+    .cta-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s;
+    }
+
+    .cta-circle svg {
+      transform: rotate(-45deg);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cta-combo:hover .cta-pill,
+    .cta-combo:hover .cta-circle {
+      background: var(--accent);
+    }
+
+    .cta-combo:hover .cta-circle svg {
+      transform: rotate(0deg);
+    }
+
+    /* ==========================================
+       ORBIT MENU OVERLAY (FLICKER-FREE)
+       ========================================== */
+    .orbit-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 95;
+      visibility: hidden;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+    }
+
+    .orbit-wash {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 54%, #faf8f3 0%, #f1efe7 65%, #e8e5da 100%);
+      clip-path: circle(0px at calc(100% - 210px) 84px);
+      transition: clip-path 0.85s cubic-bezier(0.62, 0, 0.18, 1);
+      will-change: clip-path;
+      transform: translateZ(0);
+    }
+
+    html.menu-open .orbit-overlay {
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    html.menu-open .orbit-wash {
+      clip-path: circle(155vmax at calc(100% - 210px) 84px);
+    }
+
+    .orbit-stage {
+      position: relative;
+      z-index: 2;
+      width: min(880px, 92vw);
+      height: min(640px, 76vh);
+      margin-top: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.4s ease 0.2s, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+    }
+
+    html.menu-open .orbit-stage {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .orbit-ring-svg {
+      position: absolute;
+      width: 430px;
+      height: 430px;
+      pointer-events: none;
+      opacity: 0.28;
+    }
+
+    .orbit-preview {
+      position: relative;
+      width: 245px;
+      height: 245px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #181816;
+      box-shadow: 0 24px 60px -18px rgba(15, 15, 14, 0.32), 0 0 0 1px rgba(15, 15, 14, 0.12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 22px;
+      text-align: center;
+      color: #fff;
+      z-index: 2;
+      transform: translateZ(0);
+    }
+
+    .orbit-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transform: scale(1.04);
+      transition: opacity 0.38s ease, transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .orbit-slide::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,10,10,0.65) 0%, rgba(10,10,10,0.12) 60%);
+    }
+
+    .orbit-slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .orbit-preview-caption {
+      position: relative;
+      z-index: 3;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(15, 15, 14, 0.86);
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .orbit-nodes {
+      position: absolute;
+      inset: 0;
+      list-style: none;
+    }
+
+    .orbit-node {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 4;
+    }
+
+    .orbit-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--ink);
+      box-shadow: 0 10px 26px -10px rgba(15, 15, 14, 0.16), 0 0 0 1px var(--nav-line);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.22s ease, color 0.22s ease, box-shadow 0.25s ease;
+      white-space: nowrap;
+      transform: translateZ(0);
+    }
+
+    .orbit-link:hover,
+    .orbit-link:focus-visible {
+      background: var(--ink);
+      color: #ffffff;
+      transform: scale(1.06) translateZ(0);
+      box-shadow: 0 16px 34px -10px rgba(123, 60, 255, 0.35), 0 0 0 2px var(--accent);
+    }
+
+    .orbit-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .orbit-link:hover .orbit-num {
+      color: var(--amber);
+    }
+
+    .orbit-text-group {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .orbit-title {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 15.5px;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    .orbit-note {
+      font-size: 11.5px;
+      color: var(--ink-muted);
+    }
+
+    .orbit-link:hover .orbit-note {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    /* ==========================================
+       HERO SECTION
+       ========================================== */
+    .hero-stage {
+      position: relative;
+      min-height: 100svh;
+      padding: 168px 32px 48px;
+      display: grid;
+      grid-template-columns: minmax(380px, 540px) 1fr;
+      gap: 40px;
+      align-items: center;
+      max-width: 1440px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-muted);
+    }
+
+    .hero-eyebrow strong {
+      background: var(--amber);
+      color: var(--ink);
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .hero-h1 {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(46px, 5.5vw, 80px);
+      line-height: 0.94;
+      letter-spacing: -0.055em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .hero-h1 .ln-mask {
+      display: block;
+      overflow: hidden;
+      padding-bottom: 4px;
+    }
+
+    .hero-h1 .ln {
+      display: block;
+      will-change: transform;
+    }
+
+    .hero-lead {
+      padding-left: 18px;
+      border-left: 2.5px solid var(--ink);
+      font-size: clamp(16px, 1.3vw, 18.5px);
+      line-height: 1.48;
+      color: #25251d;
+      max-width: 495px;
+    }
+
+    .hero-acts {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+      padding-top: 4px;
+    }
+
+    .secondary-act {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 10px 6px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .secondary-act:hover {
+      border-color: var(--ink);
+    }
+
+    .secondary-act .arr-circle {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1.5px solid var(--ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .secondary-act:hover .arr-circle {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .hero-spotlight {
+      margin-top: 6px;
+      background: #e8e6de;
+      border: 1px solid rgba(15, 15, 14, 0.12);
+      border-radius: 16px;
+      padding: 12px 14px 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      max-width: 515px;
+    }
+
+    .spotlight-text {
+      font-size: 13.5px;
+      line-height: 1.35;
+    }
+
+    .spotlight-btn {
+      background: var(--ink);
+      color: #fff;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 10px 15px;
+      border-radius: 12px;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .spotlight-btn:hover {
+      background: var(--accent);
+    }
+
+    /* Right-Hand 3-Column Marquee Mosaic */
+    .mosaic-wrap {
+      position: relative;
+      height: min(740px, 82svh);
+      width: 100%;
+      overflow: hidden;
+      border-radius: 26px;
+      mask-image: linear-gradient(to bottom, transparent 0%, #000 9%, #000 91%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 9%, #000 91%, transparent 100%);
+    }
+
+    .mosaic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      height: 100%;
+    }
+
+    .m-col {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      will-change: transform;
+      animation: colDown 24s linear infinite;
+    }
+
+    .m-col.c2 {
+      animation-name: colUp;
+    }
+
+    .mosaic-wrap:hover .m-col {
+      animation-play-state: paused;
+    }
+
+    @keyframes colDown {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(0, -50%, 0); }
+    }
+
+    @keyframes colUp {
+      0% { transform: translate3d(0, -50%, 0); }
+      100% { transform: translate3d(0, 0, 0); }
+    }
+
+    .cell {
+      position: relative;
+      height: 265px;
+      border-radius: var(--r);
+      overflow: hidden;
+      flex-shrink: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .cell.ph {
+      color: #fff;
+      background-color: #1c1c1a;
+    }
+
+    .cell.ph::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--pic);
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cell.ph::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.05) 55%);
+      pointer-events: none;
+    }
+
+    .cell.ph:hover::before {
+      transform: scale(1.06);
+    }
+
+    .cell.amber { background: var(--amber); color: var(--ink); }
+    .cell.ruby { background: var(--ruby); color: #fff; }
+    .cell.rose { background: var(--rose); color: var(--ink); }
+    .cell.dark { background: var(--card-dark); color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12); }
+    .cell.cream { background: var(--card-cream); color: var(--ink); box-shadow: inset 0 0 0 1px #e5e1d8; }
+
+    .cell-top, .cell-btm {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cell-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .cell-tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15, 15, 14, 0.72);
+      color: #fff;
+    }
+
+    .cell.amber .cell-tag,
+    .cell.rose .cell-tag,
+    .cell.cream .cell-tag {
+      background: rgba(15, 15, 14, 0.1);
+      color: var(--ink);
+    }
+
+    .cell-price {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: 21px;
+      letter-spacing: -0.03em;
+      background: #fff;
+      color: var(--ink);
+      padding: 4px 11px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .cell-title {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .cell-sub {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    /* ==========================================
+       SECTION LAYOUTS
+       ========================================== */
+    .section-wrap {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 90px 32px;
+    }
+
+    .sec-header {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 52px;
+      padding-bottom: 26px;
+      border-bottom: 1px solid var(--nav-rule);
+    }
+
+    .sec-kicker {
+      font-family: var(--mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .sec-h2 {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(30px, 3.6vw, 52px);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+    }
+
+    .sec-lead {
+      padding-left: 20px;
+      border-left: 2px solid var(--ink);
+      font-size: 16px;
+      color: var(--ink-muted);
+    }
+
+    /* ==========================================
+       CLEAN E-COMMERCE CATALOG CARDS (NO OVERLAYS ON PHOTO)
+       ========================================== */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 34px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .f-tab {
+      padding: 11px 20px;
+      border-radius: 999px;
+      background: #e8e7e2;
+      color: var(--ink-muted);
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .f-tab:hover {
+      color: var(--ink);
+    }
+
+    .f-tab.active {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .catalog-search {
+      position: relative;
+      min-width: 280px;
+    }
+
+    .catalog-search input {
+      width: 100%;
+      height: 44px;
+      padding: 0 16px 0 40px;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 15, 14, 0.15);
+      background: #fff;
+      font: inherit;
+      font-size: 14px;
+    }
+
+    .catalog-search svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--ink-muted);
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 26px;
+    }
+
+    .prod-card {
+      background: #ffffff;
+      border-radius: var(--r);
+      border: 1px solid rgba(15, 15, 14, 0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease;
+    }
+
+    .prod-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px -18px rgba(15, 15, 14, 0.16);
+    }
+
+    /* 100% Clean Product Photo Container - Zero Icons or Badges on Top */
+    .prod-visual {
+      position: relative;
+      height: 290px;
+      overflow: hidden;
+      background: #f2f0ea;
+      cursor: pointer;
+    }
+
+    .prod-visual-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .prod-card:hover .prod-visual-img {
+      transform: scale(1.05);
+    }
+
+    /* Card Information Body Below Photo */
+    .prod-body {
+      padding: 20px 22px 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .prod-meta-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .prod-brand {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+    }
+
+    .prod-badge-inline {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: var(--paper);
+      color: var(--ink);
+      border: 1px solid rgba(15, 15, 14, 0.1);
+    }
+
+    .prod-name {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 20px;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .prod-name:hover {
+      color: var(--accent);
+    }
+
+    /* Price Row Inside Card Body */
+    .prod-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin: 10px 0 12px;
+    }
+
+    .prod-price-current {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: 25px;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+
+    .prod-price-old {
+      font-size: 14px;
+      color: var(--ink-muted);
+      text-decoration: line-through;
+    }
+
+    .prod-price-save {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--amber);
+      color: var(--ink);
+      padding: 2px 7px;
+      border-radius: 6px;
+    }
+
+    /* Scent Family & Notes Block Inside Card Body */
+    .scent-quick-box {
+      background: #f8f7f3;
+      border: 1px solid #e9e6dd;
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .scent-quick-box:hover {
+      border-color: var(--ink);
+    }
+
+    .scent-family-line {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .scent-notes-line {
+      font-size: 12.5px;
+      color: var(--ink);
+      line-height: 1.35;
+    }
+
+    .prod-items-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 12.5px;
+      color: var(--ink-muted);
+    }
+
+    .prod-items-list li {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .prod-items-list li::before {
+      content: "•";
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .prod-footer {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 8px;
+      padding-top: 12px;
+      border-top: 1px solid var(--nav-line);
+    }
+
+    .inspect-btn {
+      height: 42px;
+      border-radius: 12px;
+      background: var(--paper);
+      border: 1px solid rgba(15, 15, 14, 0.14);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
+      transition: all 0.2s;
+    }
+
+    .inspect-btn:hover {
+      background: #e5e4de;
+      border-color: var(--ink);
+    }
+
+    .order-ig-btn {
+      height: 42px;
+      border-radius: 12px;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 600;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
+      transition: background 0.2s;
+    }
+
+    .order-ig-btn:hover {
+      background: var(--accent);
+    }
+
+    /* ==========================================
+       PRODUCT DETAIL MODAL (STANDARD CLEAN E-COMMERCE GALLERY)
+       ========================================== */
+    .detail-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 130;
+      background: rgba(15, 15, 14, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s;
+    }
+
+    .detail-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .detail-modal {
+      background: #ffffff;
+      color: var(--ink);
+      width: 100%;
+      max-width: 1020px;
+      max-height: 92vh;
+      border-radius: 24px;
+      overflow-y: auto;
+      box-shadow: 0 32px 70px rgba(0, 0, 0, 0.35);
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      position: relative;
+      transform: translateY(16px);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .detail-backdrop.open .detail-modal {
+      transform: translateY(0);
+    }
+
+    .detail-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 10;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--paper);
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .detail-close:hover {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    /* Left Column: Clean Standard E-Commerce Photo Gallery */
+    .detail-gallery-col {
+      background: #f8f7f3;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      border-right: 1px solid var(--nav-line);
+    }
+
+    .gallery-main-stage {
+      position: relative;
+      height: 420px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid rgba(15, 15, 14, 0.08);
+    }
+
+    .gallery-main-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gal-side-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--ink);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      z-index: 3;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .gal-side-arrow:hover {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .gal-side-arrow.prev { left: 12px; }
+    .gal-side-arrow.next { right: 12px; }
+
+    /* Clean Photo Thumbnails Strip (No text clutter) */
+    .gallery-thumbs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .gal-thumb {
+      height: 82px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      cursor: pointer;
+      padding: 0;
+      background: #fff;
+      opacity: 0.65;
+      transition: opacity 0.2s, border-color 0.2s;
+    }
+
+    .gal-thumb:hover {
+      opacity: 0.9;
+    }
+
+    .gal-thumb.active {
+      border-color: var(--ink);
+      opacity: 1;
+    }
+
+    .gal-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Right Column: Product Info & Olfactory Pyramid */
+    .detail-info-col {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .detail-header-row {
+      padding-right: 36px;
+    }
+
+    .detail-brand-tag {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+    }
+
+    .detail-title {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: 28px;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-top: 4px;
+    }
+
+    .detail-price-line {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .detail-price-now {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: 30px;
+      color: var(--ink);
+    }
+
+    .detail-price-old {
+      font-size: 15px;
+      color: var(--ink-muted);
+      text-decoration: line-through;
+    }
+
+    .detail-badge-pill {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--amber);
+      color: var(--ink);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .detail-vibe-box {
+      background: var(--paper);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .detail-vibe-label {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .detail-vibe-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .pyramid-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .pyr-row {
+      background: #ffffff;
+      border: 1px solid rgba(15, 15, 14, 0.1);
+      border-radius: 12px;
+      padding: 10px 14px;
+      display: grid;
+      grid-template-columns: 125px 1fr;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pyr-tier {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--ink-muted);
+    }
+
+    .pyr-tier strong {
+      display: block;
+      color: var(--ink);
+      font-size: 11.5px;
+    }
+
+    .pyr-notes {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .meters-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .meter-box {
+      background: var(--paper);
+      padding: 10px 14px;
+      border-radius: 12px;
+    }
+
+    .meter-top {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
+
+    .meter-bar {
+      height: 6px;
+      background: rgba(15,15,14,0.12);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .meter-fill {
+      height: 100%;
+      background: var(--ink);
+      border-radius: 999px;
+    }
+
+    .detail-actions {
+      padding-top: 12px;
+      border-top: 1px solid var(--nav-line);
+    }
+
+    .detail-order-btn {
+      width: 100%;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: background 0.2s;
+    }
+
+    .detail-order-btn:hover {
+      background: var(--accent);
+    }
+
+    /* ==========================================
+       SECTION 3: SIGNATURE INTERACTION (PARALLAX 12 RINGS)
+       ========================================== */
+    .sillage-section {
+      position: relative;
+      margin: 20px 32px;
+      border-radius: 28px;
+      background: radial-gradient(110% 90% at 50% 45%, #3a5462 0%, #1c2c36 52%, #0e161c 100%);
+      color: #ffffff;
+      overflow: hidden;
+      min-height: 740px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 42px;
+      box-shadow: 0 28px 60px -24px rgba(15, 15, 14, 0.45);
+    }
+
+    .px-chrome-top,
+    .px-chrome-btm {
+      position: relative;
+      z-index: 6;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-family: var(--mono);
+      font-size: 12.5px;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .px-chrome-btm {
+      align-items: flex-end;
+    }
+
+    .px-corner-right {
+      text-align: right;
+    }
+
+    .sillage-selector {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 14px auto;
+      background: rgba(0, 0, 0, 0.45);
+      padding: 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .sillage-tab {
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.72);
+      transition: all 0.25s ease;
+    }
+
+    .sillage-tab:hover {
+      color: #fff;
+    }
+
+    .sillage-tab.active {
+      background: #ffffff;
+      color: #000000;
+      font-weight: 600;
+    }
+
+    .sillage-center {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 440px;
+      z-index: 4;
+    }
+
+    .rings-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .rings-svg path {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.44);
+      stroke-width: 1.15;
+      stroke-dasharray: 1200;
+      stroke-dashoffset: 1200;
+      transition: stroke-dashoffset 1.2s cubic-bezier(0.62, 0.04, 0.22, 1), stroke 0.35s ease;
+    }
+
+    .sillage-section.rings-active .rings-svg path {
+      stroke-dashoffset: 0;
+    }
+
+    .sillage-center:hover .rings-svg path {
+      stroke: rgba(252, 221, 113, 0.78);
+    }
+
+    .sillage-bg-word {
+      position: absolute;
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(36px, 6.2vw, 86px);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.1);
+      pointer-events: none;
+      white-space: nowrap;
+      z-index: 1;
+    }
+
+    .bottle-pod {
+      position: relative;
+      z-index: 5;
+      width: 250px;
+      border-radius: 24px;
+      background: rgba(15, 15, 14, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+      box-shadow: 0 26px 50px rgba(0, 0, 0, 0.45);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s;
+    }
+
+    .bottle-pod:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: var(--amber);
+    }
+
+    .bottle-img-box {
+      width: 100%;
+      height: 205px;
+      border-radius: 16px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .bottle-pod-meta {
+      text-align: center;
+      width: 100%;
+    }
+
+    .bottle-pod-title {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    .bottle-pod-sub {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--amber);
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    .note-orbit-card {
+      position: absolute;
+      z-index: 6;
+      background: rgba(10, 14, 18, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 13px 18px;
+      max-width: 245px;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity: 0;
+      transform: scale(0.88);
+    }
+
+    .sillage-section.rings-active .note-orbit-card {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .note-orbit-card.n-top { top: 10%; left: 9%; transition-delay: 0.1s; }
+    .note-orbit-card.n-heart { top: 12%; right: 9%; transition-delay: 0.2s; }
+    .note-orbit-card.n-base { bottom: 10%; left: 10%; transition-delay: 0.3s; }
+    .note-orbit-card.n-set { bottom: 10%; right: 9%; border-color: var(--amber); transition-delay: 0.4s; }
+
+    .note-wave-tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--amber);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .note-wave-val {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.35;
+    }
+
+    .px-btn-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .px-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      min-width: 225px;
+      height: 45px;
+      padding: 0 16px;
+      background: #000000;
+      color: #ffffff;
+      font-family: var(--mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .px-btn:hover {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    /* ==========================================
+       VALUE, TRUST, FAQ & FINAL CTA
+       ========================================== */
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .val-card {
+      position: relative;
+      background: var(--card-cream);
+      border: 1px solid #e5e1d8;
+      border-radius: var(--r);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 270px;
+    }
+
+    .val-card.featured {
+      background: var(--card-dark);
+      color: #fff;
+      border-color: var(--card-dark);
+    }
+
+    .val-num {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid currentColor;
+      align-self: flex-start;
+      opacity: 0.75;
+    }
+
+    .val-title {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 23px;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      margin: 20px 0 10px;
+    }
+
+    .val-desc {
+      font-size: 14.5px;
+      opacity: 0.84;
+      line-height: 1.5;
+    }
+
+    .trust-banner {
+      background: var(--card-dark);
+      color: #fff;
+      border-radius: 28px;
+      padding: 52px 42px;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .trust-steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .trust-step {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .trust-step-num {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      color: var(--amber);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .trust-step h4 {
+      font-family: var(--display);
+      font-size: 16.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .trust-step p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .faq-list {
+      max-width: 920px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      background: #fff;
+      border-radius: 18px;
+      border: 1px solid var(--nav-line);
+      overflow: hidden;
+    }
+
+    .faq-q {
+      width: 100%;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      text-align: left;
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 17.5px;
+    }
+
+    .faq-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--paper);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s ease, background 0.2s;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .faq-a-inner {
+      padding: 0 24px 22px;
+      color: var(--ink-muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .final-cta-box {
+      margin: 20px 32px 64px;
+      background: var(--amber);
+      color: var(--ink);
+      border-radius: 28px;
+      padding: 64px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* Instagram Confirmation Modal */
+    .ig-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 140;
+      background: rgba(15, 15, 14, 0.68);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s;
+    }
+
+    .ig-modal-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .ig-modal {
+      background: #fff;
+      color: var(--ink);
+      width: 100%;
+      max-width: 480px;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .ig-copy-box {
+      background: var(--paper);
+      border: 1px dashed rgba(15, 15, 14, 0.25);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-family: var(--mono);
+      font-size: 12.5px;
+      line-height: 1.45;
+    }
+
+    .ig-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #15803d;
+      background: #dcfce7;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    /* ==========================================
+       RESPONSIVE BREAKPOINTS
+       ========================================== */
+    @media (max-width: 1080px) {
+      .hero-stage {
+        grid-template-columns: 1fr;
+        padding-top: 152px;
+      }
+      .mosaic-wrap {
+        height: 500px;
+      }
+      .sec-header,
+      .trust-banner,
+      .value-grid,
+      .detail-modal {
+        grid-template-columns: 1fr;
+      }
+      .detail-gallery-col {
+        border-right: none;
+        border-bottom: 1px solid var(--nav-line);
+      }
+      .main-nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .hdr {
+        left: 12px;
+        right: 12px;
+        height: auto;
+      }
+      .util {
+        padding: 6px 14px;
+        height: auto;
+      }
+      .unav, .util-rule {
+        display: none;
+      }
+      .hdr-main {
+        padding: 12px 14px;
+      }
+      .brand-title {
+        font-size: 19px;
+      }
+      .cta-pill {
+        height: 40px;
+        padding: 0 12px;
+        font-size: 12.5px;
+      }
+      .cta-circle {
+        display: none;
+      }
+      .hero-stage {
+        padding: 132px 16px 36px;
+      }
+      .mosaic-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .m-col.c3 {
+        display: none;
+      }
+      .sillage-section {
+        margin: 16px;
+        padding: 26px 18px;
+      }
+      .px-chrome-top, .px-chrome-btm {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .px-corner-right {
+        text-align: left;
+      }
+      .sillage-center {
+        flex-direction: column;
+        gap: 14px;
+        padding: 20px 0;
+      }
+      .note-orbit-card {
+        position: static;
+        max-width: 100%;
+        width: 100%;
+        opacity: 1;
+        transform: none;
+      }
+      .orbit-stage {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        overflow-y: auto;
+        padding: 20px 10px;
+      }
+      .orbit-preview, .orbit-ring-svg {
+        display: none;
+      }
+      .orbit-nodes {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .orbit-node {
+        position: static;
+        transform: none !important;
+      }
+      .section-wrap {
+        padding: 60px 16px;
+      }
+      .trust-steps {
+        grid-template-columns: 1fr;
+      }
+      .pyr-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+      .gallery-main-stage {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FLOATING WHITE HEADER CARD -->
+  <header class="hdr" id="top-hdr">
+    <div class="util">
+      <div class="util-left">
+        <span class="util-badge">
+          <span class="dot"></span>
+          <span data-i18n="util_badge">100% Original verpackt • Прямая поставка из Германии</span>
+        </span>
+        <span class="util-rule"></span>
+        <span data-i18n="util_curator">Куратор: Оксана (@aroma_excellence_beauty)</span>
+      </div>
+      <div class="util-right">
+        <nav class="unav" aria-label="Quick categories">
+          <a href="#catalog" onclick="filterCatalog('all')" data-i18n="nav_all">Все (20)</a>
+          <a href="#catalog" onclick="filterCatalog('women')" data-i18n="nav_women">Женские сеты</a>
+          <a href="#catalog" onclick="filterCatalog('men')" data-i18n="nav_men">Мужские</a>
+          <a href="#catalog" onclick="filterCatalog('skincare')" data-i18n="nav_care">Estée Lauder</a>
+        </nav>
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <button type="button" class="lang-btn active" data-lang="ru" onclick="setLanguage('ru')">RU</button>
+          <button type="button" class="lang-btn" data-lang="de" onclick="setLanguage('de')">DE</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hdr-main">
+      <a href="#" class="brand" aria-label="Aroma Excellence Home">
+        <div class="brand-title">
+          AROMA EXCELLENCE
+          <svg class="brand-star" viewBox="0 0 10 10" aria-hidden="true">
+            <path d="M5 0 6.25 3.75 10 5 6.25 6.25 5 10 3.75 6.25 0 5 3.75 3.75Z"/>
+          </svg>
+        </div>
+        <span class="brand-sub" data-i18n="brand_tagline">AN ARCHIVE OF SCENT CAST IN GLASS • GERMANY / EU</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#catalog" class="nav-link-pill">
+          <span data-i18n="nav_cat_link">Каталог духов (20)</span>
+          <span class="nav-circle-arr" aria-hidden="true">↓</span>
+        </a>
+        <a href="#sillage-lab" data-i18n="nav_sillage">Разбор шлейфа</a>
+        <a href="#trust" data-i18n="nav_trust_link">Проверка оригинала</a>
+        <a href="#faq" data-i18n="nav_faq_link">Вопросы</a>
+      </nav>
+
+      <div class="hdr-actions">
+        <button type="button" class="orbit-trigger" id="orbit-btn" aria-expanded="false" aria-controls="orbit-menu">
+          <span class="orbit-label-stack">
+            <span data-i18n="menu_open">Компас</span>
+            <span data-i18n="menu_close">Закрыть</span>
+          </span>
+          <span class="orbit-glyph-wrap">
+            <svg class="orbit-glyph" viewBox="-18 -18 36 36" aria-hidden="true">
+              <circle cx="0" cy="0" r="2.45" fill="currentColor"/>
+              <circle cx="15" cy="0" r="2.2" fill="currentColor"/>
+              <circle cx="10.6" cy="10.6" r="2.2" fill="currentColor"/>
+              <circle cx="0" cy="15" r="2.2" fill="currentColor"/>
+              <circle cx="-10.6" cy="10.6" r="2.2" fill="currentColor"/>
+              <circle cx="-15" cy="0" r="2.2" fill="currentColor"/>
+              <circle cx="-10.6" cy="-10.6" r="2.2" fill="currentColor"/>
+              <circle cx="0" cy="-15" r="2.2" fill="currentColor"/>
+              <circle cx="10.6" cy="-10.6" r="2.2" fill="currentColor"/>
+            </svg>
+            <span class="orbit-close-x" aria-hidden="true">✕</span>
+          </span>
+        </button>
+
+        <a href="https://www.instagram.com/aroma_excellence_beauty" target="_blank" rel="noopener" class="cta-combo">
+          <span class="cta-pill" data-i18n="hdr_cta">Заказать в Instagram</span>
+          <span class="cta-circle" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ORBIT FRAGRANCE COMPASS MENU -->
+  <div class="orbit-overlay" id="orbit-menu" role="dialog" aria-modal="true" aria-label="Fragrance Orbit Navigation">
+    <div class="orbit-wash" id="orbit-wash"></div>
+    <div class="orbit-stage">
+      <svg class="orbit-ring-svg" viewBox="0 0 430 430" aria-hidden="true">
+        <circle cx="215" cy="215" r="205" fill="none" stroke="currentColor" stroke-dasharray="4 6"/>
+        <circle cx="215" cy="215" r="138" fill="none" stroke="currentColor" stroke-opacity="0.45"/>
+      </svg>
+
+      <div class="orbit-preview" id="orbit-preview-box">
+        <div class="orbit-slide active" data-slide="0" style="background-image: var(--img-devotion);"></div>
+        <div class="orbit-slide" data-slide="1" style="background-image: var(--img-idole);"></div>
+        <div class="orbit-slide" data-slide="2" style="background-image: var(--img-homme);"></div>
+        <div class="orbit-slide" data-slide="3" style="background-image: var(--img-estee);"></div>
+        <div class="orbit-slide" data-slide="4" style="background-image: var(--img-rabanne);"></div>
+        <div class="orbit-slide" data-slide="5" style="background-image: var(--img-gucci);"></div>
+        <span class="orbit-preview-caption" id="orbit-preview-label">01 / Флагманы от 50€</span>
+      </div>
+
+      <ul class="orbit-nodes" id="orbit-nodes-list">
+        <li class="orbit-node" data-angle="315" data-slide="0" data-caption="01 / Dolce & Gabbana и Gucci от 50€">
+          <a href="#catalog" class="orbit-link" onclick="closeOrbitAndFilter('solo')">
+            <span class="orbit-num">01</span>
+            <span class="orbit-text-group">
+              <span class="orbit-title" data-i18n="orb_1_t">Флагманы Соло</span>
+              <span class="orbit-note" data-i18n="orb_1_n">D&G Devotion & Gucci Bloom</span>
+            </span>
+          </a>
+        </li>
+        <li class="orbit-node" data-angle="45" data-slide="1" data-caption="02 / Женские подарочные боксы 23€–90€">
+          <a href="#catalog" class="orbit-link" onclick="closeOrbitAndFilter('women')">
+            <span class="orbit-num">02</span>
+            <span class="orbit-text-group">
+              <span class="orbit-title" data-i18n="orb_2_t">Женские Сеты</span>
+              <span class="orbit-note" data-i18n="orb_2_n">Lancôme, Rabanne, Gucci, 212</span>
+            </span>
+          </a>
+        </li>
+        <li class="orbit-node" data-angle="0" data-slide="2" data-caption="03 / Мужские наборы 49€–100€">
+          <a href="#catalog" class="orbit-link" onclick="closeOrbitAndFilter('men')">
+            <span class="orbit-num">03</span>
+            <span class="orbit-text-group">
+              <span class="orbit-title" data-i18n="orb_3_t">Мужской Архив</span>
+              <span class="orbit-note" data-i18n="orb_3_n">Invictus, Boss, Diesel, 212 Men</span>
+            </span>
+          </a>
+        </li>
+        <li class="orbit-node" data-angle="135" data-slide="3" data-caption="04 / Комплексы Estée Lauder 55€–90€">
+          <a href="#catalog" class="orbit-link" onclick="closeOrbitAndFilter('skincare')">
+            <span class="orbit-num">04</span>
+            <span class="orbit-text-group">
+              <span class="orbit-title" data-i18n="orb_4_t">Уход Estée Lauder</span>
+              <span class="orbit-note" data-i18n="orb_4_n">Advanced Night Repair Сеты</span>
+            </span>
+          </a>
+        </li>
+        <li class="orbit-node" data-angle="225" data-slide="4" data-caption="05 / 12 волн шлейфа и разбор нот">
+          <a href="#sillage-lab" class="orbit-link" onclick="toggleOrbitMenu(false)">
+            <span class="orbit-num">05</span>
+            <span class="orbit-text-group">
+              <span class="orbit-title" data-i18n="orb_5_t">Геометрия Шлейфа</span>
+              <span class="orbit-note" data-i18n="orb_5_n">Интерактивный разбор нот</span>
+            </span>
+          </a>
+        </li>
+        <li class="orbit-node" data-angle="180" data-slide="5" data-caption="06 / Быстрый заказ у Оксаны в Instagram">
+          <a href="https://www.instagram.com/aroma_excellence_beauty" target="_blank" rel="noopener" class="orbit-link">
+            <span class="orbit-num">06</span>
+            <span class="orbit-text-group">
+              <span class="orbit-title" data-i18n="orb_6_t">Директ Instagram</span>
+              <span class="orbit-note">@aroma_excellence_beauty ↗</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       BLOCK 1: HERO
+       ========================================== -->
+  <main>
+    <section class="hero-stage">
+      <div class="hero-copy">
+        <div class="hero-eyebrow">
+          <strong>ORIGINAL VERPACKT</strong>
+          <span data-i18n="hero_eyebrow">Оригинальная парфюмерия с выгодой до 50%</span>
+        </div>
+
+        <h1 class="hero-h1" id="hero-h1">
+          <span class="ln-mask"><span class="ln" data-i18n="h1_1">АРХИВ</span></span>
+          <span class="ln-mask"><span class="ln" data-i18n="h1_2">КУЛЬТОВЫХ</span></span>
+          <span class="ln-mask"><span class="ln" data-i18n="h1_3">АРОМАТОВ</span></span>
+          <span class="ln-mask"><span class="ln" data-i18n="h1_4">БЕЗ НАЦЕНКИ</span></span>
+        </h1>
+
+        <p class="hero-lead" id="hero-lead" data-i18n="hero_lead">
+          Оригинальные духи, подарочные наборы и люксовый уход Lancôme, Gucci, Dolce & Gabbana, Paco Rabanne, Boss и Estée Lauder в заводской упаковке — с подробным описанием нот каждого аромата.
+        </p>
+
+        <div class="hero-acts" id="hero-acts">
+          <a href="#catalog" class="cta-combo">
+            <span class="cta-pill" data-i18n="hero_btn_cat">Перейти в каталог (от 23€)</span>
+            <span class="cta-circle" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M5 12h14M13 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </a>
+
+          <a href="#sillage-lab" class="secondary-act">
+            <span data-i18n="hero_btn_sillage">Интерактивная пирамида нот</span>
+            <span class="arr-circle" aria-hidden="true">↓</span>
+          </a>
+        </div>
+
+        <div class="hero-spotlight" id="hero-spotlight">
+          <div class="spotlight-text" data-i18n="spotlight_copy">
+            <strong>Бестселлер:</strong> D&G Devotion Intense (Лесной орех, Флердоранж, Ваниль • 100ml) — <strong>55€</strong>.
+          </div>
+          <button type="button" class="spotlight-btn" onclick="openDetailModal(1)" data-i18n="spotlight_cta">Подробнее</button>
+        </div>
+      </div>
+
+      <!-- 3-Column Infinite Marquee Mosaic -->
+      <div class="mosaic-wrap" aria-label="Curated Perfume Showcase">
+        <div class="mosaic-grid">
+          <div class="m-col c1">
+            <div class="cell ph" style="--pic: var(--img-devotion);" onclick="openDetailModal(1)">
+              <div class="cell-top">
+                <span class="cell-tag">Original verpackt</span>
+                <span class="cell-price">55€</span>
+              </div>
+              <div class="cell-btm">
+                <div class="cell-title">D&G Devotion Intense</div>
+                <div class="cell-sub">Eau de Parfum • 100 ml</div>
+              </div>
+            </div>
+
+            <div class="cell amber" onclick="openDetailModal(7)">
+              <div class="cell-top">
+                <span class="cell-tag">Gift Set 3-in-1</span>
+                <span class="cell-price">90€</span>
+              </div>
+              <div class="cell-btm">
+                <div class="cell-title">Rabanne Million Gold Her</div>
+                <div class="cell-sub">EDP 90ml + 10ml + Lotion 100ml</div>
+              </div>
+            </div>
+
+            <div class="cell ph" style="--pic: var(--img-gucci);" onclick="openDetailModal(4)">
+              <div class="cell-top">
+                <span class="cell-tag">Original verpackt</span>
+                <span class="cell-price">50€</span>
+              </div>
+              <div class="cell-btm">
+                <div class="cell-title">Gucci Bloom Ambrosia</div>
+                <div class="cell-sub">EDP Intense • 50 ml</div>
+              </div>
+            </div>
+
+            <div class="cell dark" onclick="openDetailModal(14)">
+              <div class="cell-top">
+                <span class="cell-tag">Men's Box</span>
+                <span class="cell-price">68€</span>
+              </div>
+              <div class="cell-btm">
+                <div class="cell-title">Boss Bottled Set</div>
+                <div class="cell-sub">EDT 100ml + Gel 100ml + 10ml</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="m-col c2">
+            <div class="cell rose" onclick="openDetailModal(6)">
+              <div class="cell-top">
+                <span class="cell-tag">Bestseller Set</span>
+                <span class="cell-price">75€</span>
+              </div>
+              <div class="cell-btm">
+                <div class="cell-title">Lancôme Idôle Set</div>
+                <div class="cell-sub">EDP 50ml + Cream 50ml + Mascara</div>
+              </div>
+            </div>
+
+            <div class="cell ph" style="--pic: var(--img-rabanne);" onclick="openDetailModal(10)">
+              <div class="cell-top">
+                <span class="cell-tag">2-in-1 Gold Box</span>
+                <span class="cell-price">65€</span>
+              </div>
+              <div class="cell-btm">
+                <div class="cell-title">Rabanne Fame Intense</div>
+                <div class="cell-sub">EDP 50ml + Body Lotion 75ml</div>
+              </div>
+            </div>
+
+            <div class="cell ruby" onclick="openDetailModal(12)">
+              <div class="cell-top">
+                <span class="cell-tag">Holiday Box</span>
+                <span class="cell-price">75€</span>
+              </div>
+              <div class="cell-btm">
+                <div class="cell-title">212 VIP Rosé Set</div>
+                <div class="cell-sub">EDP 80ml + Lotion 100ml + 10ml</div>
+              </div>
+            </div>
+
+            <div class="cell ph" style="--pic: var(--img-homme);" onclick="openDetailModal(2)">
+              <div class="cell-top">
+                <span class="cell-tag">Pour Homme</span>
+                <span class="cell-price">60€</span>
+              </div>
+              <div class="cell-btm">
+                <div class="cell-title">D&G Devotion Homme</div>
+                <div class="cell-sub">Eau de Parfum • 100 ml</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="m-col c3">
+            <div class="cell ph" style="--pic: var(--img-idole);" onclick="openDetailModal(5)">
+              <div class="cell-top">
+                <span class="cell-tag">Luxury Set</span>
+                <span class="cell-price">90€</span>
+              </div>
+              <div class="cell-btm">
+                <div class="cell-title">La Vie Est Belle Set</div>
+                <div class="cell-sub">EDP 50ml + Rénergie 15ml + Mascara</div>
+              </div>
+            </div>
+
+            <div class="cell cream" onclick="openDetailModal(17)">
+              <div class="cell-top">
+                <span class="cell-tag">4 Миниатюры</span>
+                <span class="cell-price">23€</span>
+              </div>
+              <div class="cell-btm">
+                <div class="cell-title">Guess Amore 4x7.5ml</div>
+                <div class="cell-sub">4 разных аромата в боксе</div>
+              </div>
+            </div>
+
+            <div class="cell ph" style="--pic: var(--img-estee);" onclick="openDetailModal(19)">
+              <div class="cell-top">
+                <span class="cell-tag">Night Repair</span>
+                <span class="cell-price">80€</span>
+              </div>
+              <div class="cell-btm">
+                <div class="cell-title">Estée Lauder ANR Set</div>
+                <div class="cell-sub">Serum 50ml + Mask 30ml + Lift 7ml</div>
+              </div>
+            </div>
+
+            <div class="cell dark" onclick="openDetailModal(9)">
+              <div class="cell-top">
+                <span class="cell-tag">Elixir 3-in-1</span>
+                <span class="cell-price">100€</span>
+              </div>
+              <div class="cell-btm">
+                <div class="cell-title">Invictus Victory Set</div>
+                <div class="cell-sub">Elixir 100ml + Deo 150ml + 10ml</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         BLOCK 2: CLEAN E-COMMERCE CATALOG
+         ========================================== -->
+    <section class="section-wrap" id="catalog">
+      <div class="sec-header">
+        <div>
+          <span class="sec-kicker" data-i18n="cat_kicker">01 / КАТАЛОГ В НАЛИЧИИ</span>
+          <h2 class="sec-h2" data-i18n="cat_h2">ОРИГИНАЛЬНЫЕ ДУХИ И ПОДАРОЧНЫЕ НАБОРЫ</h2>
+        </div>
+        <p class="sec-lead" data-i18n="cat_lead">
+          Нажмите на любую карточку, чтобы посмотреть дополнительные фотографии, узнать характер аромата и изучить полную пирамиду нот.
+        </p>
+      </div>
+
+      <div class="filter-bar">
+        <div class="filter-tabs" role="tablist">
+          <button type="button" class="f-tab active" data-filter="all" onclick="filterCatalog('all')" data-i18n="flt_all">Все позиции (20)</button>
+          <button type="button" class="f-tab" data-filter="solo" onclick="filterCatalog('solo')" data-i18n="flt_solo">Духи Соло (4)</button>
+          <button type="button" class="f-tab" data-filter="women" onclick="filterCatalog('women')" data-i18n="flt_women">Женские наборы (7)</button>
+          <button type="button" class="f-tab" data-filter="men" onclick="filterCatalog('men')" data-i18n="flt_men">Мужские наборы (6)</button>
+          <button type="button" class="f-tab" data-filter="skincare" onclick="filterCatalog('skincare')" data-i18n="flt_care">Estée Lauder Уход (3)</button>
+        </div>
+
+        <div class="catalog-search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+          <input type="search" id="search-input" placeholder="Поиск по нотам или бренду: ваниль, роза, Gucci..." oninput="handleSearch(this.value)" />
+        </div>
+      </div>
+
+      <div class="catalog-grid" id="catalog-grid"></div>
+    </section>
+
+    <!-- ==========================================
+         BLOCK 3: SIGNATURE INTERACTION (PARALLAX 12 RINGS)
+         ========================================== -->
+    <section class="sillage-section rings-active" id="sillage-lab" aria-label="Interactive Sillage and Gift Set Anatomy">
+      <div class="px-chrome-top">
+        <div>
+          <div data-i18n="px_tl_1">КАЖДАЯ КАПЛЯ —</div>
+          <div data-i18n="px_tl_2">ЭТО ВОЛНА ПРИТЯЖЕНИЯ.</div>
+        </div>
+
+        <div class="sillage-selector" role="tablist">
+          <button type="button" class="sillage-tab active" onclick="selectSillageItem(0)">D&G Devotion Intense (55€)</button>
+          <button type="button" class="sillage-tab" onclick="selectSillageItem(1)">Lancôme Idôle Set (75€)</button>
+          <button type="button" class="sillage-tab" onclick="selectSillageItem(2)">Rabanne Million Gold Set (90€)</button>
+          <button type="button" class="sillage-tab" onclick="selectSillageItem(3)">Gucci Bloom Ambrosia (50€)</button>
+          <button type="button" class="sillage-tab" onclick="selectSillageItem(4)">Invictus Victory Set (100€)</button>
+        </div>
+
+        <div class="px-corner-right">
+          <div data-i18n="px_tr_1">ВЫБЕРИТЕ БЕСТСЕЛЛЕР,</div>
+          <div data-i18n="px_tr_2">ЧТОБЫ УВИДЕТЬ 3 ВОЛНЫ РАСКРЫТИЯ</div>
+          <div data-i18n="px_tr_3">И ПОЛНЫЙ СОСТАВ НАБОРА.</div>
+        </div>
+      </div>
+
+      <div class="sillage-center" id="sillage-stage">
+        <svg class="rings-svg" viewBox="0 0 1280 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <path d="M 340,60 A 310,310 0 0,0 340,540" />
+          <path d="M 395,95 A 255,255 0 0,0 395,505" />
+          <path d="M 450,130 A 200,200 0 0,0 450,470" />
+          <path d="M 940,60 A 310,310 0 0,1 940,540" />
+          <path d="M 885,95 A 255,255 0 0,1 885,505" />
+          <path d="M 830,130 A 200,200 0 0,1 830,470" />
+          <path d="M 510,165 A 150,150 0 0,0 510,435" />
+          <path d="M 770,165 A 150,150 0 0,1 770,435" />
+          <path d="M 545,195 A 115,115 0 0,0 545,405" />
+          <path d="M 735,195 A 115,115 0 0,1 735,405" />
+          <path d="M 480,45 A 360,360 0 0,1 800,45" />
+          <path d="M 480,555 A 360,360 0 0,0 800,555" />
+        </svg>
+
+        <div class="sillage-bg-word" id="sillage-bg-word">DEVOTION</div>
+
+        <div class="note-orbit-card n-top">
+          <span class="note-wave-tag" data-i18n="wave_1_label">ВОЛНА I • ВЕРХНИЕ НОТЫ (0–15 МИН)</span>
+          <div class="note-wave-val" id="sillage-top-note">Карамелизированный лесной орех и солнечный цитрус</div>
+        </div>
+
+        <div class="note-orbit-card n-heart">
+          <span class="note-wave-tag" data-i18n="wave_2_label">ВОЛНА II • СЕРДЦЕ АРОМАТА (30 МИН – 4 Ч)</span>
+          <div class="note-wave-val" id="sillage-heart-note">Флердоранж (цветок апельсинового дерева)</div>
+        </div>
+
+        <div class="bottle-pod" id="sillage-pod" onclick="openDetailFromSillage()">
+          <div class="bottle-img-box" id="sillage-img" style="background-image: var(--img-devotion);"></div>
+          <div class="bottle-pod-meta">
+            <div class="bottle-pod-title" id="sillage-title">D&G Devotion Intense</div>
+            <div class="bottle-pod-sub" id="sillage-sub">55€ • Открыть карточку →</div>
+          </div>
+        </div>
+
+        <div class="note-orbit-card n-base">
+          <span class="note-wave-tag" data-i18n="wave_3_label">ВОЛНА III • БАЗОВЫЙ ШЛЕЙФ (ДО 14 ЧАСОВ)</span>
+          <div class="note-wave-val" id="sillage-base-note">Теплая мадагаскарская ваниль и глубокий амбровый аккорд</div>
+        </div>
+
+        <div class="note-orbit-card n-set">
+          <span class="note-wave-tag" data-i18n="wave_4_label">КОМПЛЕКТАЦИЯ И ВЫГОДА</span>
+          <div class="note-wave-val" id="sillage-set-info">Полноразмерный флакон 100 мл в заводской слюде (выгода 70€)</div>
+        </div>
+      </div>
+
+      <div class="px-chrome-btm">
+        <div class="px-btn-stack">
+          <button type="button" class="px-btn" onclick="openDetailFromSillage()">
+            <span data-i18n="px_btn_inspect">ОПИСАНИЕ И ФОТО ТОВАРА</span>
+            <span>→</span>
+          </button>
+          <button type="button" class="px-btn" onclick="openOrderModalFromSillage()">
+            <span data-i18n="px_btn_buy">ЗАКАЗАТЬ В INSTAGRAM</span>
+            <span>↗</span>
+          </button>
+        </div>
+
+        <div class="px-corner-right">
+          <div data-i18n="px_br_1">МЫ НЕ ПРОДАЕМ РЕПЛИКИ.</div>
+          <div data-i18n="px_br_2">ТОЛЬКО ОРИГИНАЛЫ В ЗАВОДСКОЙ УПАКОВКЕ.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         BLOCK 4: VALUE EXPLANATION
+         ========================================== -->
+    <section class="section-wrap">
+      <div class="sec-header">
+        <div>
+          <span class="sec-kicker" data-i18n="val_kicker">02 / ПРОЗРАЧНОЕ ЦЕНООБРАЗОВАНИЕ</span>
+          <h2 class="sec-h2" data-i18n="val_h2">ВЫ ПЛАТИТЕ ЗА ФЛАКОН И ШЛЕЙФ. А НЕ ЗА ВИТРИНЫ ТОРГОВОГО ЦЕНТРА.</h2>
+        </div>
+        <p class="sec-lead" data-i18n="val_lead">
+          В крупных парфюмерных сетях до 60% стоимости флакона уходит на аренду залов и маркетинг. Мы отбираем запечатанные оригиналы (Original verpackt) и подарочные сеты напрямую с европейских складов.
+        </p>
+      </div>
+
+      <div class="value-grid">
+        <article class="val-card">
+          <span class="val-num">01 / ORIGINAL VERPACKT</span>
+          <div>
+            <h3 class="val-title" data-i18n="v1_t">Заводская слюда и батч-код</h3>
+            <p class="val-desc" data-i18n="v1_d">
+              Каждый флакон и подарочный набор продается в нетронутой фирменной упаковке. Вы можете проверить серийный батч-код партии еще до отправки.
+            </p>
+          </div>
+        </article>
+
+        <article class="val-card featured">
+          <span class="val-num">02 / SMART LUXURY (-35..50%)</span>
+          <div>
+            <h3 class="val-title" data-i18n="v2_t">Флагманы 100 мл от 55€</h3>
+            <p class="val-desc" data-i18n="v2_d">
+              Dolce & Gabbana Devotion Intense 100 ml за 55€, мужской Devotion Pour Homme 100 ml за 60€, а Gucci Bloom Ambrosia di Fiori 50 ml — всего за 50€.
+            </p>
+          </div>
+        </article>
+
+        <article class="val-card">
+          <span class="val-num">03 / ПОДАРОК ПОД КЛЮЧ</span>
+          <div>
+            <h3 class="val-title" data-i18n="v3_t">3 продукта по цене одного</h3>
+            <p class="val-desc" data-i18n="v3_d">
+              В наших сетах Lancôme, Rabanne, Gucci и Boss к полноразмерному парфюму уже идут парфюмированный лосьон, гель для душа, тушь или тревел-спрей 10 мл.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         BLOCK 5: TRUST & AUTHENTICITY PROOF
+         ========================================== -->
+    <section class="section-wrap" id="trust" style="padding-top: 10px;">
+      <div class="trust-banner">
+        <div>
+          <span class="sec-kicker" style="color: var(--amber);" data-i18n="tr_kicker">03 / ГАРАНТИЯ ПОДЛИННОСТИ</span>
+          <h2 class="sec-h2" style="margin-bottom: 18px;" data-i18n="tr_h2">ДОКАЗАТЕЛЬСТВА В ДЕТАЛЯХ ПЕРЕД КАЖДОЙ ОТПРАВКОЙ</h2>
+          <p style="color: rgba(255,255,255,0.78); font-size: 16px; margin-bottom: 26px;" data-i18n="tr_desc">
+            Владелица бутика Оксана лично проверяет каждый сет и по вашему запросу присылает дополнительные живые фото и видео именно вашей коробочки в Instagram Direct перед отправкой.
+          </p>
+          <a href="https://www.instagram.com/aroma_excellence_beauty" target="_blank" rel="noopener" class="cta-combo">
+            <span class="cta-pill" style="background: var(--amber); color: var(--ink);" data-i18n="tr_cta">Посмотреть профиль @aroma_excellence_beauty</span>
+          </a>
+        </div>
+
+        <div class="trust-steps">
+          <div class="trust-step">
+            <span class="trust-step-num">CHECK 01</span>
+            <h4 data-i18n="ts1_t">Original verpackt</h4>
+            <p data-i18n="ts1_d">Заводская термо-слюда с ровным фабричным штампом без следов вскрытия.</p>
+          </div>
+          <div class="trust-step">
+            <span class="trust-step-num">CHECK 02</span>
+            <h4 data-i18n="ts2_t">Проверка батч-кода</h4>
+            <p data-i18n="ts2_d">Серийный номер выбит на коробке и совпадает с гравировкой на флаконе.</p>
+          </div>
+          <div class="trust-step">
+            <span class="trust-step-num">CHECK 03</span>
+            <h4 data-i18n="ts3_t">Видео-обзор в Директ</h4>
+            <p data-i18n="ts3_d">Покажем комплектацию набора и упаковку вживую перед оплатой.</p>
+          </div>
+          <div class="trust-step">
+            <span class="trust-step-num">CHECK 04</span>
+            <h4 data-i18n="ts4_t">Бережная доставка</h4>
+            <p data-i18n="ts4_d">Плотная защитная упаковка, чтобы подарочная коробка доехала в идеале.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         BLOCK 6: FAQ
+         ========================================== -->
+    <section class="section-wrap" id="faq">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto 44px;">
+        <span class="sec-kicker" data-i18n="faq_kicker">04 / ОТВЕТЫ НА СОМНЕНИЯ</span>
+        <h2 class="sec-h2" data-i18n="faq_h2">ЧАСТЫЕ ВОПРОСЫ ПОКУПАТЕЛЕЙ</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button type="button" class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="fq1_q">Это точно оригинал, а не реплика или тестер без крышки?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a" style="max-height: 220px;">
+            <div class="faq-a-inner" data-i18n="fq1_a">
+              Мы продаем исключительно 100% оригинальную парфюмерию и уход в полноценной заводской упаковке (Original verpackt). Никаких копий, «лицензий» или распива — вы получаете точно такой же запечатанный флакон или подарочный бокс, как в крупных европейских сетях.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="fq2_q">Как понять, какой именно запах у духов и подойдет ли он мне?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner" data-i18n="fq2_a">
+              Нажмите на любую карточку товара на сайте — откроется подробное описание характера духов, три ступени пирамиды нот (верхние, сердце, база), шкала стойкости и дополнительные фотографии.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-q" onclick="toggleFaq(this)">
+            <span data-i18n="fq3_q">Что делать, если я ищу другие духи, которых нет в списке на сайте?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner" data-i18n="fq3_a">
+              На этой странице собраны 20 главных хитов в наличии. Если вам нужен другой аромат — просто напишите его название Оксане в Instagram (@aroma_excellence_beauty), и мы проверим его наличие на складе.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         BLOCK 7: FINAL CTA
+         ========================================== -->
+    <section class="final-cta-box">
+      <div class="final-cta-inner">
+        <span class="sec-kicker" style="color: var(--ink);" data-i18n="fcta_kicker">AROMA EXCELLENCE BEAUTY • DIRECT ORDER</span>
+        <h2 class="sec-h2" data-i18n="fcta_h2">ЗАБРОНИРУЙТЕ СВОЙ АРОМАТ ИЛИ ПОДАРОЧНЫЙ БОКС СЕГОДНЯ</h2>
+        <p style="font-size: 16.5px; max-width: 580px;" data-i18n="fcta_sub">
+          Количество лимитированных наборов в каждой партии ограничено. Напишите нам в Instagram — поможем определиться со шлейфом и отправим ваш заказ в течение 24 часов.
+        </p>
+        <a href="https://www.instagram.com/aroma_excellence_beauty" target="_blank" rel="noopener" class="cta-combo">
+          <span class="cta-pill" style="height: 56px; padding: 0 28px; font-size: 15.5px;" data-i18n="fcta_btn">Перейти в Instagram (@aroma_excellence_beauty)</span>
+          <span class="cta-circle" style="width: 56px; height: 56px;" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       PRODUCT DETAIL MODAL (CLEAN GALLERY + OLFACTORY PYRAMID)
+       ========================================== -->
+  <div class="detail-backdrop" id="detail-backdrop" role="dialog" aria-modal="true" aria-labelledby="det-title">
+    <div class="detail-modal">
+      <button type="button" class="detail-close" onclick="closeDetailModal()" aria-label="Close">✕</button>
+
+      <!-- Left: Clean Standard E-Commerce Photo Gallery -->
+      <div class="detail-gallery-col">
+        <div class="gallery-main-stage">
+          <button type="button" class="gal-side-arrow prev" onclick="stepAngle(-1)" aria-label="Previous photo">‹</button>
+          <img id="gal-main-img" class="gallery-main-img" src="" alt="" />
+          <button type="button" class="gal-side-arrow next" onclick="stepAngle(1)" aria-label="Next photo">›</button>
+        </div>
+
+        <div class="gallery-thumbs" id="gal-thumbs">
+          <!-- Clean photo thumbnails injected dynamically -->
+        </div>
+      </div>
+
+      <!-- Right: Scent Character, Notes Pyramid & Set Contents -->
+      <div class="detail-info-col">
+        <div>
+          <div class="detail-header-row">
+            <span class="detail-brand-tag" id="det-brand">DOLCE & GABBANA</span>
+            <h3 class="detail-title" id="det-title">Devotion Intense</h3>
+            <div class="detail-price-line">
+              <span class="detail-price-now" id="det-price">55 €</span>
+              <span class="detail-price-old" id="det-retail">125 €</span>
+              <span class="detail-badge-pill" id="det-badge">Original verpackt</span>
+            </div>
+          </div>
+
+          <div class="detail-vibe-box" style="margin-top: 16px;">
+            <div class="detail-vibe-label" id="det-vibe-label">ХАРАКТЕР И СЕМЕЙСТВО АРОМАТА</div>
+            <div class="detail-vibe-text" id="det-vibe">Восточно-гурманский • Теплый, обволакивающий, комплиментарный</div>
+          </div>
+
+          <div class="pyramid-stack" style="margin-top: 12px;">
+            <div class="pyr-row">
+              <div class="pyr-tier"><strong id="lbl-top">Верхние ноты</strong><span id="lbl-top-sub">Старт (0–15 мин)</span></div>
+              <div class="pyr-notes" id="det-top">Жареный лесной орех, яркий итальянский цитрус</div>
+            </div>
+            <div class="pyr-row">
+              <div class="pyr-tier"><strong id="lbl-heart">Ноты сердца</strong><span id="lbl-heart-sub">Раскрытие (30м–4ч)</span></div>
+              <div class="pyr-notes" id="det-heart">Цветок апельсинового дерева (Флердоранж)</div>
+            </div>
+            <div class="pyr-row">
+              <div class="pyr-tier"><strong id="lbl-base">База и шлейф</strong><span id="lbl-base-sub">Шлейф (до 14 ч)</span></div>
+              <div class="pyr-notes" id="det-base">Теплая мадагаскарская ваниль, глубокая амбра</div>
+            </div>
+          </div>
+
+          <div class="meters-grid" style="margin-top: 12px;">
+            <div class="meter-box">
+              <div class="meter-top"><span id="lbl-long">Стойкость</span><strong id="det-long-val">9.5 / 10</strong></div>
+              <div class="meter-bar"><div class="meter-fill" id="det-long-bar" style="width: 95%;"></div></div>
+            </div>
+            <div class="meter-box">
+              <div class="meter-top"><span id="lbl-sil">Шлейфовость</span><strong id="det-sil-val">9.2 / 10</strong></div>
+              <div class="meter-bar"><div class="meter-fill" id="det-sil-bar" style="width: 92%;"></div></div>
+            </div>
+          </div>
+
+          <div style="margin-top: 14px;">
+            <div class="detail-brand-tag" style="margin-bottom: 6px;" id="lbl-inside">СОСТАВ И ОБЪЕМ:</div>
+            <ul class="prod-items-list" id="det-items"></ul>
+          </div>
+        </div>
+
+        <div class="detail-actions">
+          <button type="button" class="detail-order-btn" id="det-order-btn">
+            <span id="det-order-text">Заказать за 55€ в Instagram Direct ↗</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSTAGRAM QUICK-ORDER MODAL -->
+  <div class="ig-modal-backdrop" id="ig-modal" role="dialog" aria-modal="true" aria-labelledby="ig-modal-title">
+    <div class="ig-modal">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span class="ig-status-badge" id="ig-copied-badge">✓ Текст заказа скопирован в буфер</span>
+        <button type="button" onclick="closeOrderModal()" aria-label="Close modal" style="font-size: 20px; padding: 4px;">✕</button>
+      </div>
+      <h3 class="sec-h2" style="font-size: 25px;" id="ig-modal-title" data-i18n="mod_title">Готово к отправке в Instagram</h3>
+      <p style="font-size: 14px; color: var(--ink-muted);" data-i18n="mod_desc">
+        Мы сформировали и скопировали текст вашего заказа. Нажмите кнопку ниже, чтобы открыть профиль Оксаны <strong>@aroma_excellence_beauty</strong>, и просто вставьте сообщение в Директ:
+      </p>
+      <div class="ig-copy-box" id="ig-message-preview"></div>
+      <div style="display:flex; gap: 10px; flex-wrap: wrap;">
+        <a href="https://www.instagram.com/aroma_excellence_beauty" target="_blank" rel="noopener" class="order-ig-btn" style="flex:1; height: 48px; font-size: 14.5px;" data-i18n="mod_go_btn">
+          Открыть Instagram Direct ↗
+        </a>
+        <button type="button" class="f-tab" onclick="copyCurrentOrderText()" data-i18n="mod_copy_again">
+          Скопировать ещё раз
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ==========================================
+       1. COMPLETE 20-PRODUCT ARCHIVE WITH CLEAN GALLERY PHOTOS
+       ========================================== */
+    const PHOTO_POOL = {
+      amberGold: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1000&q=85",
+      rosePink: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1000&q=85",
+      crimsonFloral: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=1000&q=85",
+      luxuryGold: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=1000&q=85",
+      darkHomme: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=1000&q=85",
+      serumCare: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1000&q=85",
+      detailSpray: "https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=1000&q=85",
+      giftBox: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1000&q=85",
+      botanicalNotes: "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=1000&q=85",
+      minimalBottle: "https://images.unsplash.com/photo-1563170351-be82bc888aa4?auto=format&fit=crop&w=1000&q=85"
+    };
+
+    const PRODUCTS = [
+      {
+        id: 1,
+        brand: "Dolce & Gabbana",
+        name: "Devotion Intense",
+        cat: "solo",
+        price: 55,
+        retail: 125,
+        badge: "Original verpackt",
+        photos: [PHOTO_POOL.amberGold, PHOTO_POOL.detailSpray, PHOTO_POOL.giftBox, PHOTO_POOL.botanicalNotes],
+        family_ru: "Восточно-гурманский • Теплый, обволакивающий, комплиментарный",
+        family_de: "Orientalisch-Gourmand • Warm, sinnlich, langanhaltend",
+        top_ru: "Карамелизированный лесной орех, солнечный цитрус",
+        top_de: "Karamellisierte Haselnuss, sonnige Zitrusnoten",
+        heart_ru: "Цветок апельсинового дерева (Флердоранж)",
+        heart_de: "Edle italienische Orangenblüte",
+        base_ru: "Теплая мадагаскарская ваниль, глубокий амбровый аккорд",
+        base_de: "Warme Madagaskar-Vanille, tiefer Amber-Akkord",
+        longevity: 95,
+        sillage: 92,
+        items_ru: ["Eau de Parfum Intense 100 ml", "Заводская упаковка (Original verpackt)"],
+        items_de: ["Eau de Parfum Intense 100 ml", "Original verpackt (Neu & Versiegelt)"]
+      },
+      {
+        id: 2,
+        brand: "Dolce & Gabbana",
+        name: "Devotion Pour Homme",
+        cat: "solo",
+        price: 60,
+        retail: 120,
+        badge: "Pour Homme • 100ml",
+        photos: [PHOTO_POOL.darkHomme, PHOTO_POOL.detailSpray, PHOTO_POOL.amberGold, PHOTO_POOL.botanicalNotes],
+        family_ru: "Древесно-пряный кофейный • Харизматичный, бодрящий, статусный",
+        family_de: "Holzig-Würzig • Charismatisch, mit Espresso-Note",
+        top_ru: "Свежий итальянский лимон и цедра",
+        top_de: "Frische italienische Zitrone",
+        heart_ru: "Ароматный свежемолотый кофе эспрессо",
+        heart_de: "Kräftiger italienischer Espresso-Kaffee",
+        base_ru: "Землистые пачули и благородная сухая древесина",
+        base_de: "Erdiges Patschuli & edle Hölzer",
+        longevity: 90,
+        sillage: 88,
+        items_ru: ["Eau de Parfum Pour Homme 100 ml", "Мужской флагман с серебряным сердцем"],
+        items_de: ["Eau de Parfum Pour Homme 100 ml", "Herren-Parfüm • Made in Italy"]
+      },
+      {
+        id: 3,
+        brand: "Dolce & Gabbana",
+        name: "Pour Homme Classic",
+        cat: "solo",
+        price: 57,
+        retail: 108,
+        badge: "Original verpackt",
+        photos: [PHOTO_POOL.minimalBottle, PHOTO_POOL.darkHomme, PHOTO_POOL.detailSpray, PHOTO_POOL.giftBox],
+        family_ru: "Фужерно-цитрусовый • Элегантная итальянская классика на каждый день",
+        family_de: "Aromatisch-Fougère • Zeitlose italienische Eleganz",
+        top_ru: "Бергамот, нероли, сицилийский мандарин",
+        top_de: "Bergamotte, Neroli, sizilianische Mandarine",
+        heart_ru: "Французская лаванда, шалфей, черный перец",
+        heart_de: "Lavendel, Salbei, schwarzer Pfeffer",
+        base_ru: "Дорогой табачный лист, белый кедр, бобы тонка",
+        base_de: "Tabakblatt, Zedernholz, Tonkabohne",
+        longevity: 85,
+        sillage: 84,
+        items_ru: ["Eau de Toilette 125 ml (Большой объем)", "Original verpackt • Бархатный синий кофр"],
+        items_de: ["Eau de Toilette 125 ml", "Original verpackt • Samt-Box"]
+      },
+      {
+        id: 4,
+        brand: "Gucci",
+        name: "Bloom Ambrosia di Fiori",
+        cat: "solo",
+        price: 50,
+        retail: 112,
+        badge: "Original verpackt",
+        photos: [PHOTO_POOL.crimsonFloral, PHOTO_POOL.rosePink, PHOTO_POOL.detailSpray, PHOTO_POOL.botanicalNotes],
+        family_ru: "Королевский цветочный • Бархатный, пудрово-туберозный, вечерний",
+        family_de: "Intensiv-Blumig • Samtig, edel, femininer Abendduft",
+        top_ru: "Бутоны жасмина и рангунская лиана (Квисквалис)",
+        top_de: "Jasminknospen & Rangunschlinger",
+        heart_ru: "Индийская тубероза абсолют",
+        heart_de: "Indische Tuberose Absolue",
+        base_ru: "Дамасская роза и пудровый корень ириса (оррис)",
+        base_de: "Damaszener-Rose & samtige Iriswurzel",
+        longevity: 92,
+        sillage: 90,
+        items_ru: ["Eau de Parfum Intense 50 ml", "Original verpackt • Флоральный бокс Gucci"],
+        items_de: ["Eau de Parfum Intense 50 ml", "Original verpackt • Gucci Bloom"]
+      },
+      {
+        id: 5,
+        brand: "Lancôme",
+        name: "La Vie Est Belle Set",
+        cat: "women",
+        price: 90,
+        retail: 145,
+        badge: "Set 3-in-1",
+        photos: [PHOTO_POOL.rosePink, PHOTO_POOL.giftBox, PHOTO_POOL.detailSpray, PHOTO_POOL.botanicalNotes],
+        family_ru: "Цветочно-гурманский • Сладкий, женственный, легендарный шлейф счастья",
+        family_de: "Blumig-Süß • Feminin, strahlend, ikonische Sillage",
+        top_ru: "Черная смородина и спелая медовая груша",
+        top_de: "Schwarze Johannisbeere & süße Birne",
+        heart_ru: "Пудровый ирис Паллида, жасмин, цветок апельсина",
+        heart_de: "Iris Pallida, Jasmin, Orangenblüte",
+        base_ru: "Ореховое пралине, ваниль, пачули и бобы тонка",
+        base_de: "Praline, Vanille, Patschuli, Tonkabohne",
+        longevity: 96,
+        sillage: 96,
+        items_ru: ["Eau de Parfum 50 ml", "Крем-лифтинг Rénergie Multi-Lift 15 ml", "Тушь Hypnôse Mascara schwarz 2 ml"],
+        items_de: ["Eau de Parfum 50 ml", "Rénergie Multi-Lift Creme 15 ml", "Hypnôse Mascara schwarz 2 ml"]
+      },
+      {
+        id: 6,
+        brand: "Lancôme",
+        name: "Idôle Luxury Set",
+        cat: "women",
+        price: 75,
+        retail: 122,
+        badge: "Set 3-in-1",
+        photos: [PHOTO_POOL.minimalBottle, PHOTO_POOL.rosePink, PHOTO_POOL.giftBox, PHOTO_POOL.detailSpray],
+        family_ru: "Чистый цветочно-мускусный • Нежный, свежий, аромат дорогой ухоженности",
+        family_de: "Blumig-Chypre • Frisch, zart, moderner Rosenduft",
+        top_ru: "Сочная груша, калабрийский бергамот, розовый перец",
+        top_de: "Saftige Birne, Bergamotte, rosa Pfeffer",
+        heart_ru: "Дамасская и майская роза, лепестки жасмина",
+        heart_de: "Damaszener-Rose, Rosenwasser, Jasmin",
+        base_ru: "Чистый белый мускус, бурбонская ваниль, кедр",
+        base_de: "Weißer Moschus, Bourbon-Vanille, Zedernholz",
+        longevity: 88,
+        sillage: 86,
+        items_ru: ["Idôle Eau de Parfum 50 ml", "Крем для тела Idôle Body Cream 50 ml", "Тушь Lash Idôle Mascara Mini 2,5 ml"],
+        items_de: ["Idôle Eau de Parfum 50 ml", "Idôle Body Cream 50 ml", "Lash Idôle Mascara Mini 2,5 ml"]
+      },
+      {
+        id: 7,
+        brand: "Paco Rabanne",
+        name: "Million Gold For Her Set",
+        cat: "women",
+        price: 90,
+        retail: 150,
+        badge: "Gold Box 3-in-1",
+        photos: [PHOTO_POOL.luxuryGold, PHOTO_POOL.amberGold, PHOTO_POOL.giftBox, PHOTO_POOL.detailSpray],
+        family_ru: "Сияющий белоцветочно-мускусный • Роскошный, притягательный, праздничный",
+        family_de: "Blumig-Moschus • Strahlend, luxuriös, verführerisch",
+        top_ru: "Груша, французская лаванда, искрящийся мандарин",
+        top_de: "Birne, Lavendel, strahlende Mandarine",
+        heart_ru: "Иланг-иланг, золотой жасмин, лепестки розы",
+        heart_de: "Ylang-Ylang, Jasmin, Rose",
+        base_ru: "Минеральный мускус, бурбонская ваниль, мох",
+        base_de: "Mineralischer Moschus, Vanille, Moos",
+        longevity: 93,
+        sillage: 91,
+        items_ru: ["Eau de Parfum 90 ml (Большой флакон)", "Тревел-спрей Eau de Parfum 10 ml", "Парфюмированный Body Lotion 100 ml"],
+        items_de: ["Eau de Parfum 90 ml", "Eau de Parfum Travel Spray 10 ml", "Parfümierte Body Lotion 100 ml"]
+      },
+      {
+        id: 8,
+        brand: "Paco Rabanne",
+        name: "Million Gold Intense Set",
+        cat: "men",
+        price: 70,
+        retail: 124,
+        badge: "Men Set 3-in-1",
+        photos: [PHOTO_POOL.amberGold, PHOTO_POOL.luxuryGold, PHOTO_POOL.darkHomme, PHOTO_POOL.giftBox],
+        family_ru: "Древесно-пряный сандаловый • Яркий, уверенный, магнит для комплиментов",
+        family_de: "Holzig-Würzig • Warmes Sandelholz & Mandarine",
+        top_ru: "Красный мандарин, пряный кардамон, бергамот",
+        top_de: "Blutmandarine, Kardamom, Bergamotte",
+        heart_ru: "Кремовый австралийский сандал, кедр, корица",
+        heart_de: "Cremiges Sandelholz, Zeder, Zimt",
+        base_ru: "Дымный нагармота (cypriol), теплая амбра, кожа",
+        base_de: "Cypriol, warmer Amber, Leder-Nuancen",
+        longevity: 92,
+        sillage: 90,
+        items_ru: ["Eau de Parfum Intense 100 ml", "Тревел-спрей EDT 1 Million 10 ml", "Дезодорант Deo Spray 150 ml"],
+        items_de: ["Eau de Parfum Intense 100 ml", "Eau de Toilette 1 Million 10 ml", "Deodorant Spray 150 ml"]
+      },
+      {
+        id: 9,
+        brand: "Paco Rabanne",
+        name: "Invictus Victory Elixir Set",
+        cat: "men",
+        price: 100,
+        retail: 158,
+        badge: "Elixir Set 3-in-1",
+        photos: [PHOTO_POOL.darkHomme, PHOTO_POOL.minimalBottle, PHOTO_POOL.detailSpray, PHOTO_POOL.giftBox],
+        family_ru: "Восточно-древесный эликсир • Мощный, густой, сверхстойкий вечерний хит",
+        family_de: "Amber-Holzig Elixir • Extrem langanhaltend & kraftvoll",
+        top_ru: "Прованский лавандин, зеленый кардамон, черный перец",
+        top_de: "Lavandin, grüner Kardamom, schwarzer Pfeffer",
+        heart_ru: "Мистический ладан и древесные пачули",
+        heart_de: "Geheimnisvoller Weihrauch & Patschuli",
+        base_ru: "Нектар бобов тонка и мадагаскарская ваниль",
+        base_de: "Tonkabohnen-Nektar & Madagaskar-Vanille",
+        longevity: 98,
+        sillage: 96,
+        items_ru: ["Invictus Victory Elixir Parfum 100 ml", "Дезодорант-спрей 150 ml", "Тревел-формат Eau de Toilette 10 ml"],
+        items_de: ["Invictus Victory Elixir Parfum 100 ml", "Desodorante Spray 150 ml", "Eau de Toilette 10 ml"]
+      },
+      {
+        id: 10,
+        brand: "Paco Rabanne",
+        name: "Fame Intense Set",
+        cat: "women",
+        price: 65,
+        retail: 115,
+        badge: "Gold Set 2-in-1",
+        photos: [PHOTO_POOL.luxuryGold, PHOTO_POOL.rosePink, PHOTO_POOL.giftBox, PHOTO_POOL.botanicalNotes],
+        family_ru: "Солнечный цветочно-древесный • Игривый, кремовый, с ноткой кокоса и жасмина",
+        family_de: "Blumig-Holzig • Sonniger Jasmin, Kokos & Sandelholz",
+        top_ru: "Кокосовая вода, итальянский бергамот, розовый перец",
+        top_de: "Kokoswasser, Bergamotte, rosa Pfeffer",
+        heart_ru: "Солнечный жасмин, иланг-иланг, нежный ладан",
+        heart_de: "Sonniger Jasmin, Ylang-Ylang, Weihrauch",
+        base_ru: "Сливочный сандал, минеральный мускус, кедр",
+        base_de: "Cremiges Sandelholz, Moschus, Zeder",
+        longevity: 89,
+        sillage: 87,
+        items_ru: ["Eau de Parfum Spray 50 ml", "Парфюмированный лосьон Body Lotion 75 ml"],
+        items_de: ["Eau de Parfum Spray 50 ml", "Fame Body Lotion 75 ml"]
+      },
+      {
+        id: 11,
+        brand: "Gucci",
+        name: "Guilty Pour Femme Set",
+        cat: "women",
+        price: 85,
+        retail: 142,
+        badge: "Set 3-in-1",
+        photos: [PHOTO_POOL.crimsonFloral, PHOTO_POOL.luxuryGold, PHOTO_POOL.giftBox, PHOTO_POOL.detailSpray],
+        family_ru: "Восточно-цветочный • Чувственный, бархатно-пудровый с нотами сирени и амбры",
+        family_de: "Orientalisch-Blumig • Sinnlich mit Flieder & Amber",
+        top_ru: "Средиземноморский цитрус Мандора, розовый перец, бергамот",
+        top_de: "Mandora-Zitrus, rosa Pfeffer, Bergamotte",
+        heart_ru: "Цветущая сирень, фиалка, дамасская роза",
+        heart_de: "Flieder, Veilchen, Rose, Geranie",
+        base_ru: "Масло пачули и теплая золотая амбра",
+        base_de: "Patschuli-Öl & goldener Amber",
+        longevity: 88,
+        sillage: 86,
+        items_ru: ["Woman Eau de Parfum 90 ml", "Лосьон для тела Body Lotion 50 ml", "Тревел-спрей Travel Spray 10 ml"],
+        items_de: ["Woman Eau de Parfum 90 ml", "Body Lotion 50 ml", "Travel Spray 10 ml"]
+      },
+      {
+        id: 12,
+        brand: "Carolina Herrera",
+        name: "212 VIP Rosé Set",
+        cat: "women",
+        price: 75,
+        retail: 128,
+        badge: "Red Ribbon Box",
+        photos: [PHOTO_POOL.rosePink, PHOTO_POOL.crimsonFloral, PHOTO_POOL.giftBox, PHOTO_POOL.detailSpray],
+        family_ru: "Фруктово-цветочный игристый • Легкий, праздничный, с аккордом розового шампанского",
+        family_de: "Blumig-Fruchtig • Prickelnder Rosé-Champagner & Pfirsichblüte",
+        top_ru: "Игристое розовое шампанское Rosé и розовый перец",
+        top_de: "Prickelnder Rosé-Champagner & rosa Pfeffer",
+        heart_ru: "Нежный цветок персикового дерева и букет роз",
+        heart_de: "Pfirsichblüte & Rosenstrauß",
+        base_ru: "Белый мускус, королевское дерево (Queen Wood), амбра",
+        base_de: "Weißer Moschus, Queen Wood, Amber",
+        longevity: 86,
+        sillage: 85,
+        items_ru: ["Eau de Parfum Spray 80 ml", "Лосьон для тела Body Lotion 100 ml", "Миниатюра Eau de Parfum 10 ml"],
+        items_de: ["Eau de Parfum Spray 80 ml", "Body Lotion 100 ml", "Eau de Parfum 10 ml"]
+      },
+      {
+        id: 13,
+        brand: "Carolina Herrera",
+        name: "212 Men NYC Set",
+        cat: "men",
+        price: 70,
+        retail: 118,
+        badge: "Men Set 3-in-1",
+        photos: [PHOTO_POOL.minimalBottle, PHOTO_POOL.darkHomme, PHOTO_POOL.giftBox, PHOTO_POOL.detailSpray],
+        family_ru: "Древесно-зеленый свежий • Динамичный, чистый аромат современного мегаполиса",
+        family_de: "Holzig-Frisch • Dynamisch, frisch mit Grapefruit & Ingwer",
+        top_ru: "Грейпфрут, зеленые листья, бергамот, лаванда",
+        top_de: "Grapefruit, grüne Blätter, Bergamotte, Lavendel",
+        heart_ru: "Пряный имбирь, фиалка, гардения, шалфей",
+        heart_de: "Ingwer, Veilchen, Gardenie, Salbei",
+        base_ru: "Белый мускус, сандал, ветивер, ладан",
+        base_de: "Weißer Moschus, Sandelholz, Vetiver, Weihrauch",
+        longevity: 86,
+        sillage: 84,
+        items_ru: ["Eau de Toilette Spray 100 ml", "Бальзам после бритья 100 ml", "Тревел-формат Eau de Toilette 10 ml"],
+        items_de: ["Eau de Toilette Spray 100 ml", "After Shave Balm 100 ml", "Eau de Toilette 10 ml"]
+      },
+      {
+        id: 14,
+        brand: "Hugo Boss",
+        name: "Boss Bottled Set",
+        cat: "men",
+        price: 68,
+        retail: 110,
+        badge: "Men Set 3-in-1",
+        photos: [PHOTO_POOL.darkHomme, PHOTO_POOL.amberGold, PHOTO_POOL.giftBox, PHOTO_POOL.detailSpray],
+        family_ru: "Древесно-пряный • Уютный и благородный баланс сочного яблока, корицы и дерева",
+        family_de: "Holzig-Würzig • Klassiker mit Apfel, Zimt & Sandelholz",
+        top_ru: "Красное яблоко, слива, сицилийский лимон, бергамот",
+        top_de: "Roter Apfel, Pflaume, Zitrone, Bergamotte",
+        heart_ru: "Цейлонская корица, красное дерево махагони",
+        heart_de: "Zimt, Mahagoni, Nelke",
+        base_ru: "Ваниль, сандал, белый кедр, ветивер",
+        base_de: "Vanille, Sandelholz, Zedernholz, Vetiver",
+        longevity: 87,
+        sillage: 85,
+        items_ru: ["Eau de Toilette 100 ml", "Гель для душа Shower Gel 100 ml", "Тревел-спрей Eau de Toilette 10 ml"],
+        items_de: ["Eau de Toilette 100 ml", "Shower Gel 100 ml", "Eau de Toilette 10 ml"]
+      },
+      {
+        id: 15,
+        brand: "Hugo Boss",
+        name: "Boss Trio Set 3x10ml",
+        cat: "men",
+        price: 49,
+        retail: 78,
+        badge: "3 x 10 ml",
+        photos: [PHOTO_POOL.detailSpray, PHOTO_POOL.darkHomme, PHOTO_POOL.amberGold, PHOTO_POOL.giftBox],
+        family_ru: "Дегустационное трио • 3 разных мужских характера (на день, вечер и свидание)",
+        family_de: "3-teiliges Duft-Trio • Für Alltag, Business & Abend",
+        top_ru: "Яблоко (Bottled) • Острый имбирь (The Scent) • Грейпфрут (Beyond)",
+        top_de: "Apfel (Bottled) • Ingwer (The Scent) • Grapefruit (Beyond)",
+        heart_ru: "Пряная корица • Экзотический фрукт Манинка • Лаванда",
+        heart_de: "Zimt • Maninka-Frucht • Lavendel",
+        base_ru: "Сандал и ваниль • Мягкая кожа • Дымный ветивер",
+        base_de: "Sandelholz • Edles Leder • Rauchiger Vetiver",
+        longevity: 88,
+        sillage: 86,
+        items_ru: ["Boss Bottled 10 ml", "Boss The Scent 10 ml", "Boss Bottled Beyond 10 ml"],
+        items_de: ["Boss Bottled 10 ml", "Boss The Scent 10 ml", "Boss Bottled Beyond 10 ml"]
+      },
+      {
+        id: 16,
+        brand: "Diesel",
+        name: "Only The Brave Set",
+        cat: "men",
+        price: 65,
+        retail: 105,
+        badge: "Set 3-in-1",
+        photos: [PHOTO_POOL.minimalBottle, PHOTO_POOL.darkHomme, PHOTO_POOL.detailSpray, PHOTO_POOL.giftBox],
+        family_ru: "Восточно-кожаный цитрусовый • Энергичный, контрастный, в культовом флаконе-кулаке",
+        family_de: "Orientalisch-Holzig • Zitrone, Zedernholz & warmes Leder",
+        top_ru: "Амальфитанский лимон и сладкий мандарин",
+        top_de: "Amalfi-Zitrone & Mandarine",
+        heart_ru: "Вирджинский кедр, кориандр и лист фиалки",
+        heart_de: "Virginia-Zeder, Koriander, Veilchen",
+        base_ru: "Теплая амбра, мягкая кожа, бензоин и стиракс",
+        base_de: "Warmer Amber, Leder, Benzoe, Styrax",
+        longevity: 85,
+        sillage: 84,
+        items_ru: ["Eau de Toilette 125 ml (Флакон-кулак)", "2 геля для душа по 75 ml (2 x 75ml)"],
+        items_de: ["Eau de Toilette 125 ml", "Shower Gel 2 x 75 ml"]
+      },
+      {
+        id: 17,
+        brand: "Guess",
+        name: "Amore Collection 4x7.5ml",
+        cat: "women",
+        price: 23,
+        retail: 45,
+        badge: "4 Stück x 7,5ml",
+        photos: [PHOTO_POOL.rosePink, PHOTO_POOL.botanicalNotes, PHOTO_POOL.giftBox, PHOTO_POOL.detailSpray],
+        family_ru: "Коллекция из 4 солнечных ароматов Италии • Цветочно-фруктовые и свежие",
+        family_de: "4 italienische Urlaubsdüfte • Blumig, fruchtig & frisch",
+        top_ru: "Сицилийский лимон, черная смородина, морской бриз",
+        top_de: "Sizilianische Zitrone, Johannisbeere, Meeresbrise",
+        heart_ru: "Розовый пион, фрезия, жасмин и тубероза",
+        heart_de: "Pfingstrose, Freesie, Jasmin, Tuberose",
+        base_ru: "Белый мускус, солнечная амбра и кедр",
+        base_de: "Weißer Moschus, Sonnen-Amber, Zedernholz",
+        longevity: 80,
+        sillage: 78,
+        items_ru: ["4 мини-флакона по 7,5 ml в подарочном боксе", "Идеальный сет для знакомства и путешествий"],
+        items_de: ["4 Stück x 7,5 ml Geschenkbox", "Guess Amore Duftkollektion"]
+      },
+      {
+        id: 18,
+        brand: "Estée Lauder",
+        name: "Brighter Eyes Start Here",
+        cat: "skincare",
+        price: 55,
+        retail: 96,
+        badge: "Eye Care Set",
+        photos: [PHOTO_POOL.serumCare, PHOTO_POOL.botanicalNotes, PHOTO_POOL.giftBox, PHOTO_POOL.amberGold],
+        family_ru: "Премиальный уход вокруг глаз • Без отдушек, шелковистая гель-кремовая текстура",
+        family_de: "Luxus-Augenpflege • Parfümfrei, seidige Gel-Creme-Textur",
+        top_ru: "Технология FR-Defense™ (защита от свободных радикалов)",
+        top_de: "FR-Defense™ Technologie zum Schutz der Haut",
+        heart_ru: "Гиалуроновая кислота и пептид Chronolux™ Power Signal",
+        heart_de: "Hyaluronsäure & Chronolux™ Power Signal Peptid",
+        base_ru: "Осветление темных кругов за 2 недели и увлажнение на 100 ч",
+        base_de: "Reduziert Augenringe in 2 Wochen & spendet 100h Feuchtigkeit",
+        longevity: 98,
+        sillage: 95,
+        items_ru: ["ANR Eye Gel-Creme 15 ml (Полноразмер)", "Сыворотка ANR Synchronized 7 ml", "ANR Eye 15 ml (Доп. объем в сете)"],
+        items_de: ["ANR Eye Gel-Creme 15 ml", "ANR Synchronized Serum 7 ml", "ANR Eye 15 ml"]
+      },
+      {
+        id: 19,
+        brand: "Estée Lauder",
+        name: "Advanced Night Repair Set",
+        cat: "skincare",
+        price: 80,
+        retail: 138,
+        badge: "Face Set 3-in-1",
+        photos: [PHOTO_POOL.serumCare, PHOTO_POOL.amberGold, PHOTO_POOL.giftBox, PHOTO_POOL.botanicalNotes],
+        family_ru: "Ночное клеточное восстановление 3-в-1 • Гладкая, упругая и сияющая кожа с утра",
+        family_de: "Nächtliche Zellregeneration 3-in-1 • Für strahlende, straffe Haut",
+        top_ru: "Глубокое очищение и детокс с маской Purifying Mask 30 ml",
+        top_de: "Tiefenreinigung mit Purifying Mask 30 ml",
+        heart_ru: "Сыворотка №1 в мире Advanced Night Repair 50 ml (полноразмер)",
+        heart_de: "Weltweit Nr.1 Serum Advanced Night Repair 50 ml",
+        base_ru: "Подтяжка контуров лица с концентратом Rapid Firm + Lift 7 ml",
+        base_de: "Konturen-Lifting mit Rapid Firm + Lift 7 ml",
+        longevity: 99,
+        sillage: 95,
+        items_ru: ["Сыворотка Advanced Night Repair 50 ml", "Очищающая маска Purifying Mask 30 ml", "Лифтинг-сыворотка Rapid Firm + Lift 7 ml"],
+        items_de: ["Advanced Night Repair Serum 50 ml", "Purifying Mask 30 ml", "Rapid Firm + Lift 7 ml"]
+      },
+      {
+        id: 20,
+        brand: "Estée Lauder",
+        name: "Deluxe Geschenkset 4-in-1",
+        cat: "skincare",
+        price: 90,
+        retail: 165,
+        badge: "Holiday Box 4-in-1",
+        photos: [PHOTO_POOL.giftBox, PHOTO_POOL.serumCare, PHOTO_POOL.crimsonFloral, PHOTO_POOL.botanicalNotes],
+        family_ru: "Полный 4-ступенчатый ритуал омоложения • В большой коробке с красным бантом",
+        family_de: "Komplettes 4-Schritte Pflegeritual • In festlicher Geschenkbox",
+        top_ru: "Шаг 1: Мягкое умывание с гелем Advanced Night Cleansing Gelée 30 ml",
+        top_de: "Schritt 1: Sanfte Reinigung mit Cleansing Gelée 30 ml",
+        heart_ru: "Шаг 2 и 3: Сыворотка ANR 50 ml + Крем вокруг глаз ANR Eye 5 ml",
+        heart_de: "Schritt 2 & 3: ANR Serum 50 ml + Eye Gel-Creme 5 ml",
+        base_ru: "Шаг 4: Ночной крем с коллагеном Revitalizing Supreme+ Bounce 15 ml",
+        base_de: "Schritt 4: Revitalizing Supreme+ Night Bounce Cream 15 ml",
+        longevity: 99,
+        sillage: 97,
+        items_ru: [
+          "Сыворотка ANR Multi-Recovery 50 ml",
+          "Гель-крем вокруг глаз ANR Eye 5 ml",
+          "Ночной крем Revitalizing Supreme+ 15 ml",
+          "Очищающее желе Cleansing Gelée 30 ml"
+        ],
+        items_de: [
+          "ANR Synchronized Multi-Recovery 50 ml",
+          "Eye Supercharged Gel-Creme 5 ml",
+          "Revitalizing Supreme+ Night Cream 15 ml",
+          "Advanced Night Cleansing Gelée 30 ml"
+        ]
+      }
+    ];
+
+    const SILLAGE_INDICES = [0, 5, 6, 3, 8];
+
+    const I18N = {
+      ru: {
+        util_badge: "100% Original verpackt • Прямая поставка из Германии",
+        util_curator: "Куратор: Оксана (@aroma_excellence_beauty)",
+        nav_all: "Все (20)",
+        nav_women: "Женские сеты",
+        nav_men: "Мужские",
+        nav_care: "Estée Lauder",
+        brand_tagline: "AN ARCHIVE OF SCENT CAST IN GLASS • GERMANY / EU",
+        nav_sillage: "Разбор шлейфа",
+        nav_cat_link: "Каталог духов (20)",
+        nav_trust_link: "Проверка оригинала",
+        nav_faq_link: "Вопросы",
+        menu_open: "Компас",
+        menu_close: "Закрыть",
+        hdr_cta: "Заказать в Instagram",
+        orb_1_t: "Флагманы Соло",
+        orb_1_n: "D&G Devotion & Gucci Bloom",
+        orb_2_t: "Женские Сеты",
+        orb_2_n: "Lancôme, Rabanne, Gucci, 212",
+        orb_3_t: "Мужской Архив",
+        orb_3_n: "Invictus, Boss, Diesel, 212 Men",
+        orb_4_t: "Уход Estée Lauder",
+        orb_4_n: "Advanced Night Repair Сеты",
+        orb_5_t: "Геометрия Шлейфа",
+        orb_5_n: "Интерактивный разбор нот",
+        orb_6_t: "Директ Instagram",
+        hero_eyebrow: "Оригинальная парфюмерия с выгодой до 50%",
+        h1_1: "АРХИВ",
+        h1_2: "КУЛЬТОВЫХ",
+        h1_3: "АРОМАТОВ",
+        h1_4: "БЕЗ НАЦЕНКИ",
+        hero_lead: "Оригинальные духи, подарочные наборы и люксовый уход Lancôme, Gucci, Dolce & Gabbana, Paco Rabanne, Boss и Estée Lauder в заводской упаковке — с подробным описанием нот каждого аромата.",
+        hero_btn_cat: "Перейти в каталог (от 23€)",
+        hero_btn_sillage: "Интерактивная пирамида нот",
+        spotlight_copy: "<strong>Бестселлер:</strong> D&G Devotion Intense (Лесной орех, Флердоранж, Ваниль • 100ml) — <strong>55€</strong>.",
+        spotlight_cta: "Подробнее",
+        cat_kicker: "01 / КАТАЛОГ В НАЛИЧИИ",
+        cat_h2: "ОРИГИНАЛЬНЫЕ ДУХИ И ПОДАРОЧНЫЕ НАБОРЫ",
+        cat_lead: "Нажмите на любую карточку, чтобы посмотреть дополнительные фотографии, узнать характер аромата и изучить полную пирамиду нот.",
+        flt_all: "Все позиции (20)",
+        flt_solo: "Духи Соло (4)",
+        flt_women: "Женские наборы (7)",
+        flt_men: "Мужские наборы (6)",
+        flt_care: "Estée Lauder Уход (3)",
+        px_tl_1: "КАЖДАЯ КАПЛЯ —",
+        px_tl_2: "ЭТО ВОЛНА ПРИТЯЖЕНИЯ.",
+        px_tr_1: "ВЫБЕРИТЕ БЕСТСЕЛЛЕР,",
+        px_tr_2: "ЧТОБЫ УВИДЕТЬ 3 ВОЛНЫ РАСКРЫТИЯ",
+        px_tr_3: "И ПОЛНЫЙ СОСТАВ НАБОРА.",
+        wave_1_label: "ВОЛНА I • ВЕРХНИЕ НОТЫ (0–15 МИН)",
+        wave_2_label: "ВОЛНА II • СЕРДЦЕ АРОМАТА (30 МИН – 4 Ч)",
+        wave_3_label: "ВОЛНА III • БАЗОВЫЙ ШЛЕЙФ (ДО 14 ЧАСОВ)",
+        wave_4_label: "КОМПЛЕКТАЦИЯ И ВЫГОДА",
+        px_btn_inspect: "ОПИСАНИЕ И ФОТО ТОВАРА",
+        px_btn_buy: "ЗАКАЗАТЬ В INSTAGRAM",
+        px_br_1: "МЫ НЕ ПРОДАЕМ РЕПЛИКИ.",
+        px_br_2: "ТОЛЬКО ОРИГИНАЛЫ В ЗАВОДСКОЙ УПАКОВКЕ.",
+        val_kicker: "02 / ПРОЗРАЧНОЕ ЦЕНООБРАЗОВАНИЕ",
+        val_h2: "ВЫ ПЛАТИТЕ ЗА ФЛАКОН И ШЛЕЙФ. А НЕ ЗА ВИТРИНЫ ТОРГОВОГО ЦЕНТРА.",
+        val_lead: "В крупных парфюмерных сетях до 60% стоимости флакона уходит на аренду залов и маркетинг. Мы отбираем запечатанные оригиналы (Original verpackt) и подарочные сеты напрямую с европейских складов.",
+        v1_t: "Заводская слюда и батч-код",
+        v1_d: "Каждый флакон и подарочный набор продается в нетронутой фирменной упаковке. Вы можете проверить серийный батч-код партии еще до отправки.",
+        v2_t: "Флагманы 100 мл от 55€",
+        v2_d: "Dolce & Gabbana Devotion Intense 100 ml за 55€, мужской Devotion Pour Homme 100 ml за 60€, а Gucci Bloom Ambrosia di Fiori 50 ml — всего за 50€.",
+        v3_t: "3 продукта по цене одного",
+        v3_d: "В наших сетах Lancôme, Rabanne, Gucci и Boss к полноразмерному парфюму уже идут парфюмированный лосьон, гель для душа, тушь или тревел-спрей 10 мл.",
+        tr_kicker: "03 / ГАРАНТИЯ ПОДЛИННОСТИ",
+        tr_h2: "ДОКАЗАТЕЛЬСТВА В ДЕТАЛЯХ ПЕРЕД КАЖДОЙ ОТПРАВКОЙ",
+        tr_desc: "Владелица бутика Оксана лично проверяет каждый сет и по вашему запросу присылает дополнительные живые фото и видео именно вашей коробочки в Instagram Direct перед отправкой.",
+        tr_cta: "Посмотреть профиль @aroma_excellence_beauty",
+        ts1_t: "Original verpackt",
+        ts1_d: "Заводская термо-слюда с ровным фабричным штампом без следов вскрытия.",
+        ts2_t: "Проверка батч-кода",
+        ts2_d: "Серийный номер выбит на коробке и совпадает с гравировкой на флаконе.",
+        ts3_t: "Видео-обзор в Директ",
+        ts3_d: "Покажем комплектацию набора и упаковку вживую перед оплатой.",
+        ts4_t: "Бережная доставка",
+        ts4_d: "Плотная защитная упаковка, чтобы подарочная коробка доехала в идеале.",
+        faq_kicker: "04 / ОТВЕТЫ НА СОМНЕНИЯ",
+        faq_h2: "ЧАСТЫЕ ВОПРОСЫ ПОКУПАТЕЛЕЙ",
+        fq1_q: "Это точно оригинал, а не реплика или тестер без крышки?",
+        fq1_a: "Мы продаем исключительно 100% оригинальную парфюмерию и уход в полноценной заводской упаковке (Original verpackt). Никаких копий, «лицензий» или распива — вы получаете точно такой же запечатанный флакон или подарочный бокс, как в крупных европейских сетях.",
+        fq2_q: "Как понять, какой именно запах у духов и подойдет ли он мне?",
+        fq2_a: "Нажмите на любую карточку товара на сайте — откроется подробное описание характера духов, три ступени пирамиды нот (верхние, сердце, база), шкала стойкости и дополнительные фотографии.",
+        fq3_q: "Что делать, если я ищу другие духи, которых нет в списке на сайте?",
+        fq3_a: "На этой странице собраны 20 главных хитов в наличии. Если вам нужен другой аромат — просто напишите его название Оксане в Instagram (@aroma_excellence_beauty), и мы проверим его наличие на складе.",
+        fcta_kicker: "AROMA EXCELLENCE BEAUTY • DIRECT ORDER",
+        fcta_h2: "ЗАБРОНИРУЙТЕ СВОЙ АРОМАТ ИЛИ ПОДАРОЧНЫЙ БОКС СЕГОДНЯ",
+        fcta_sub: "Количество лимитированных наборов в каждой партии ограничено. Напишите нам в Instagram — поможем определиться со шлейфом и отправим ваш заказ в течение 24 часов.",
+        fcta_btn: "Перейти в Instagram (@aroma_excellence_beauty)",
+        mod_title: "Готово к отправке в Instagram",
+        mod_desc: "Мы сформировали и скопировали текст вашего заказа. Нажмите кнопку ниже, чтобы открыть профиль Оксаны <strong>@aroma_excellence_beauty</strong>, и просто вставьте сообщение в Директ:",
+        mod_go_btn: "Открыть Instagram Direct ↗",
+        mod_copy_again: "Скопировать ещё раз",
+        btn_inspect: "Подробнее",
+        btn_order: "Заказать ↗",
+        notes_prefix: "Ноты:"
+      },
+      de: {
+        util_badge: "100% Original verpackt • Direkter Versand aus Deutschland",
+        util_curator: "Kuratorin: Oksana (@aroma_excellence_beauty)",
+        nav_all: "Alle (20)",
+        nav_women: "Damen-Sets",
+        nav_men: "Herren",
+        nav_care: "Estée Lauder",
+        brand_tagline: "AN ARCHIVE OF SCENT CAST IN GLASS • DEUTSCHLAND / EU",
+        nav_sillage: "Duft-Pyramide",
+        nav_cat_link: "Katalog (20)",
+        nav_trust_link: "Originalitätsprüfung",
+        nav_faq_link: "FAQ",
+        menu_open: "Kompass",
+        menu_close: "Schließen",
+        hdr_cta: "Auf Instagram bestellen",
+        orb_1_t: "Solo-Flakons",
+        orb_1_n: "D&G Devotion & Gucci Bloom",
+        orb_2_t: "Damen-Geschenksets",
+        orb_2_n: "Lancôme, Rabanne, Gucci, 212",
+        orb_3_t: "Herren-Archiv",
+        orb_3_n: "Invictus, Boss, Diesel, 212 Men",
+        orb_4_t: "Estée Lauder Pflege",
+        orb_4_n: "Advanced Night Repair Sets",
+        orb_5_t: "Sillage-Geometrie",
+        orb_5_n: "Interaktive Duft-Analyse",
+        orb_6_t: "Instagram Direct",
+        hero_eyebrow: "Originale Parfümerie bis zu 50% günstiger",
+        h1_1: "ARCHIV",
+        h1_2: "IKONISCHER",
+        h1_3: "DÜFTE OHNE",
+        h1_4: "AUFSCHLAG",
+        hero_lead: "Originale Parfüms, limitierte Geschenksets und Luxuspflege von Lancôme, Gucci, Dolce & Gabbana, Paco Rabanne, Boss und Estée Lauder in Originalverpackung.",
+        hero_btn_cat: "Zum Katalog (ab 23€)",
+        hero_btn_sillage: "Interaktive Duftpyramide",
+        spotlight_copy: "<strong>Bestseller:</strong> D&G Devotion Intense (Haselnuss, Orangenblüte, Vanille • 100ml) — <strong>55€</strong>.",
+        spotlight_cta: "Details",
+        cat_kicker: "01 / AUF LAGER",
+        cat_h2: "ORIGINALE DÜFTE & GESCHENKSETS",
+        cat_lead: "Klicken Sie auf ein Produkt, um weitere Fotos, den Duftcharakter und die vollständige Duftpyramide zu sehen.",
+        flt_all: "Alle Artikel (20)",
+        flt_solo: "Solo-Düfte (4)",
+        flt_women: "Damen-Sets (7)",
+        flt_men: "Herren-Sets (6)",
+        flt_care: "Estée Lauder Pflege (3)",
+        px_tl_1: "JEDER TROPFEN IST",
+        px_tl_2: "EINE NEUE ANZIEHUNG.",
+        px_tr_1: "WÄHLEN SIE EINEN DUFT,",
+        px_tr_2: "UM DIE 3 DUFTWELLEN UND",
+        px_tr_3: "DEN SET-INHALT ZU SEHEN.",
+        wave_1_label: "WELLE I • KOPFNOTE (0–15 MIN)",
+        wave_2_label: "WELLE II • HERZNOTE (30 MIN – 4 STD)",
+        wave_3_label: "WELLE III • BASIS & SILLAGE (BIS 14 STD)",
+        wave_4_label: "SET-INHALT & PREISVORTEIL",
+        px_btn_inspect: "PRODUKTDETAILS & FOTOS",
+        px_btn_buy: "AUF INSTAGRAM BESTELLEN",
+        px_br_1: "WIR VERKAUFEN KEINE KOPIEN.",
+        px_br_2: "NUR 100% ORIGINALE IN WERKSVERSIEGELUNG.",
+        val_kicker: "02 / TRANSPARENTE PREISE",
+        val_h2: "SIE ZAHLEN FÜR DEN FLAKON UND DEN DUFT. NICHT FÜR DIE LADENMIETE.",
+        val_lead: "In großen Parfümerieketten fließen bis zu 60% des Preises in Ladenmieten und Marketing. Wir beziehen originalverpackte Düfte direkt aus europäischen Vertriebskanälen.",
+        v1_t: "Original verpackt & Batch-Code",
+        v1_d: "Jeder Flakon und jedes Set kommt ungeöffnet in der Originalfolie. Sie können den Serien-Batch-Code bereits vor dem Versand prüfen.",
+        v2_t: "100 ml Flaggschiffe ab 55€",
+        v2_d: "D&G Devotion Intense 100 ml für 55€, Devotion Pour Homme 100 ml für 60€ und Gucci Bloom Ambrosia di Fiori 50 ml für nur 50€.",
+        v3_t: "3 Produkte zum Preis von einem",
+        v3_d: "Unsere Sets von Lancôme, Rabanne, Gucci und Boss enthalten neben dem Hauptduft bereits Bodylotion, Duschgel, Mascara oder ein 10 ml Travel-Spray.",
+        tr_kicker: "03 / ECHTHEITSGARANTIE",
+        tr_h2: "BEWEISE IM DETAIL VOR JEDEM VERSAND",
+        tr_desc: "Inhaberin Oksana prüft jedes Set persönlich und sendet Ihnen auf Wunsch vorab Live-Fotos und ein Video Ihrer Box per Instagram Direct.",
+        tr_cta: "Instagram-Profil @aroma_excellence_beauty öffnen",
+        ts1_t: "Original verpackt",
+        ts1_d: "Werkseitige Zellophan-Versiegelung ohne Öffnungsspuren.",
+        ts2_t: "Batch-Code Check",
+        ts2_d: "Die Seriennummer auf der Box stimmt exakt mit dem Flakon überein.",
+        ts3_t: "Live-Video per Direct",
+        ts3_d: "Wir zeigen Ihnen Ihr Set vor der Bezahlung gerne im Video.",
+        ts4_t: "Sicherer Versand",
+        ts4_d: "Gepolsterte Verpackung, damit jede Geschenkbox makellos ankommt.",
+        faq_kicker: "04 / HÄUFIGE FRAGEN",
+        faq_h2: "EHRLICHE ANTWORTEN AUF IHRE FRAGEN",
+        fq1_q: "Handelt es sich garantiert um Originale und nicht um Repliken?",
+        fq1_a: "Wir verkaufen ausschließlich 100% originale Parfümerie- und Pflegeprodukte in ungeöffneter Originalverpackung (Original verpackt).",
+        fq2_q: "Wie erfahre ich, wie das Parfüm riecht?",
+        fq2_a: "Klicken Sie auf ein beliebiges Produkt — es öffnet sich die Detailansicht mit Charakterbeschreibung, Kopf-, Herz- und Basisnoten sowie weiteren Fotos.",
+        fq3_q: "Was ist, wenn ich einen bestimmten Duft suche, der hier nicht gelistet ist?",
+        fq3_a: "Schreiben Sie uns einfach Ihren Wunschduft auf Instagram (@aroma_excellence_beauty) — wir prüfen sofort die Verfügbarkeit.",
+        fcta_kicker: "AROMA EXCELLENCE BEAUTY • DIREKTBESTELLUNG",
+        fcta_h2: "SICHERN SIE SICH IHREN DUFT ODER IHR GESCHENKSET NOCH HEUTE",
+        fcta_sub: "Die Stückzahl jeder Lieferung ist begrenzt. Schreiben Sie uns auf Instagram — wir beraten Sie gerne und versenden innerhalb von 24 Stunden.",
+        fcta_btn: "Zu Instagram (@aroma_excellence_beauty)",
+        mod_title: "Bereit für Instagram Direct",
+        mod_desc: "Wir haben Ihren Bestelltext kopiert. Klicken Sie unten, um Oksanas Profil <strong>@aroma_excellence_beauty</strong> zu öffnen:",
+        mod_go_btn: "Instagram Direct öffnen ↗",
+        mod_copy_again: "Text erneut kopieren",
+        btn_inspect: "Details",
+        btn_order: "Bestellen ↗",
+        notes_prefix: "Noten:"
+      }
+    };
+
+    let currentLang = "ru";
+    let currentFilter = "all";
+    let currentSearch = "";
+    let activeSillageIndex = 0;
+    let currentDetailProdId = 1;
+    let currentAngleIndex = 0;
+    let currentOrderString = "";
+
+    /* ==========================================
+       2. RENDER CLEAN CATALOG CARDS (NO OVERLAYS ON IMAGE)
+       ========================================== */
+    function renderCatalog() {
+      const grid = document.getElementById("catalog-grid");
+      const dict = I18N[currentLang];
+      const isRu = currentLang === "ru";
+
+      const filtered = PRODUCTS.filter(p => {
+        const matchesCat = currentFilter === "all" || p.cat === currentFilter;
+        const q = currentSearch.trim().toLowerCase();
+        const itemsArr = isRu ? p.items_ru : p.items_de;
+        const fam = isRu ? p.family_ru : p.family_de;
+        const notesStr = `${p.top_ru} ${p.heart_ru} ${p.base_ru} ${p.top_de} ${p.heart_de} ${p.base_de}`.toLowerCase();
+        const matchesSearch = !q ||
+          p.brand.toLowerCase().includes(q) ||
+          p.name.toLowerCase().includes(q) ||
+          fam.toLowerCase().includes(q) ||
+          notesStr.includes(q) ||
+          itemsArr.some(i => i.toLowerCase().includes(q));
+        return matchesCat && matchesSearch;
+      });
+
+      grid.innerHTML = filtered.map(p => {
+        const items = isRu ? p.items_ru : p.items_de;
+        const family = isRu ? p.family_ru : p.family_de;
+        const shortNotes = isRu
+          ? `${p.top_ru.split(",")[0]} • ${p.heart_ru.split(",")[0]} • ${p.base_ru.split(",")[0]}`
+          : `${p.top_de.split(",")[0]} • ${p.heart_de.split(",")[0]} • ${p.base_de.split(",")[0]}`;
+        const discountPct = Math.round((1 - p.price / p.retail) * 100);
+
+        return `
+          <article class="prod-card">
+            <div class="prod-visual" onclick="openDetailModal(${p.id})">
+              <img class="prod-visual-img" src="${p.photos[0]}" alt="${p.brand} ${p.name}" loading="lazy" />
+            </div>
+            <div class="prod-body">
+              <div>
+                <div class="prod-meta-top">
+                  <span class="prod-brand">${p.brand}</span>
+                  <span class="prod-badge-inline">${p.badge}</span>
+                </div>
+                <h3 class="prod-name" onclick="openDetailModal(${p.id})">${p.name}</h3>
+
+                <div class="prod-price-row">
+                  <span class="prod-price-current">${p.price} €</span>
+                  <span class="prod-price-old">${p.retail} €</span>
+                  <span class="prod-price-save">-${discountPct}%</span>
+                </div>
+
+                <div class="scent-quick-box" onclick="openDetailModal(${p.id})">
+                  <div class="scent-family-line">${family.split("•")[0]}</div>
+                  <div class="scent-notes-line">
+                    <strong>${dict.notes_prefix}</strong> ${shortNotes}
+                  </div>
+                </div>
+
+                <ul class="prod-items-list">
+                  ${items.map(item => `<li>${item}</li>`).join("")}
+                </ul>
+              </div>
+              <div class="prod-footer">
+                <button type="button" class="inspect-btn" onclick="openDetailModal(${p.id})">
+                  <span>${dict.btn_inspect}</span>
+                </button>
+                <button type="button" class="order-ig-btn" onclick="openOrderModal(${p.id})">
+                  <span>${dict.btn_order}</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function filterCatalog(cat) {
+      currentFilter = cat;
+      document.querySelectorAll(".f-tab[data-filter]").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-filter") === cat);
+      });
+      renderCatalog();
+    }
+
+    function handleSearch(val) {
+      currentSearch = val;
+      renderCatalog();
+    }
+
+    /* ==========================================
+       3. PRODUCT DETAIL MODAL (CLEAN GALLERY + PYRAMID)
+       ========================================== */
+    function openDetailModal(prodId) {
+      currentDetailProdId = prodId;
+      currentAngleIndex = 0;
+      const prod = PRODUCTS.find(p => p.id === prodId) || PRODUCTS[0];
+      const isRu = currentLang === "ru";
+
+      document.getElementById("det-brand").textContent = prod.brand;
+      document.getElementById("det-title").textContent = prod.name;
+      document.getElementById("det-price").textContent = prod.price + " €";
+      document.getElementById("det-retail").textContent = prod.retail + " €";
+      document.getElementById("det-badge").textContent = prod.badge;
+
+      document.getElementById("det-vibe-label").textContent = isRu
+        ? "ХАРАКТЕР И СЕМЕЙСТВО АРОМАТА"
+        : "DUFTCHARAKTER & DUFTFAMILIE";
+      document.getElementById("det-vibe").textContent = isRu ? prod.family_ru : prod.family_de;
+
+      document.getElementById("lbl-top").textContent = isRu ? "Верхние ноты" : "Kopfnote";
+      document.getElementById("lbl-top-sub").textContent = isRu ? "Старт (0–15 мин)" : "Start (0–15 Min)";
+      document.getElementById("det-top").textContent = isRu ? prod.top_ru : prod.top_de;
+
+      document.getElementById("lbl-heart").textContent = isRu ? "Ноты сердца" : "Herznote";
+      document.getElementById("lbl-heart-sub").textContent = isRu ? "Раскрытие (30м–4ч)" : "Herz (30m–4h)";
+      document.getElementById("det-heart").textContent = isRu ? prod.heart_ru : prod.heart_de;
+
+      document.getElementById("lbl-base").textContent = isRu ? "База и шлейф" : "Basisnote";
+      document.getElementById("lbl-base-sub").textContent = isRu ? "Шлейф (до 14 ч)" : "Sillage (bis 14h)";
+      document.getElementById("det-base").textContent = isRu ? prod.base_ru : prod.base_de;
+
+      document.getElementById("lbl-long").textContent = isRu ? "Стойкость" : "Haltbarkeit";
+      document.getElementById("det-long-val").textContent = (prod.longevity / 10).toFixed(1) + " / 10";
+      document.getElementById("det-long-bar").style.width = prod.longevity + "%";
+
+      document.getElementById("lbl-sil").textContent = isRu ? "Шлейфовость" : "Sillage / Intensität";
+      document.getElementById("det-sil-val").textContent = (prod.sillage / 10).toFixed(1) + " / 10";
+      document.getElementById("det-sil-bar").style.width = prod.sillage + "%";
+
+      document.getElementById("lbl-inside").textContent = isRu
+        ? "СОСТАВ И ОБЪЕМ:"
+        : "LIEFERUMFANG:";
+
+      const items = isRu ? prod.items_ru : prod.items_de;
+      document.getElementById("det-items").innerHTML = items.map(i => `<li>${i}</li>`).join("");
+
+      document.getElementById("det-order-text").textContent = isRu
+        ? `Заказать ${prod.name} за ${prod.price}€ в Instagram ↗`
+        : `${prod.name} für ${prod.price}€ auf Instagram bestellen ↗`;
+
+      document.getElementById("det-order-btn").onclick = () => {
+        closeDetailModal();
+        openOrderModal(prod.id);
+      };
+
+      renderDetailGallery();
+      document.getElementById("detail-backdrop").classList.add("open");
+      document.body.classList.add("modal-locked");
+    }
+
+    function renderDetailGallery() {
+      const prod = PRODUCTS.find(p => p.id === currentDetailProdId) || PRODUCTS[0];
+      const mainImg = document.getElementById("gal-main-img");
+      mainImg.src = prod.photos[currentAngleIndex];
+      mainImg.alt = `${prod.brand} ${prod.name}`;
+
+      const thumbsContainer = document.getElementById("gal-thumbs");
+      thumbsContainer.innerHTML = prod.photos.map((url, idx) => `
+        <button type="button" class="gal-thumb ${idx === currentAngleIndex ? "active" : ""}"
+                onclick="setAngle(${idx})" aria-label="Photo ${idx + 1}">
+          <img src="${url}" alt="${prod.name} thumbnail ${idx + 1}" />
+        </button>
+      `).join("");
+    }
+
+    function setAngle(idx) {
+      currentAngleIndex = idx;
+      renderDetailGallery();
+    }
+
+    function stepAngle(dir) {
+      const prod = PRODUCTS.find(p => p.id === currentDetailProdId) || PRODUCTS[0];
+      const total = prod.photos.length;
+      currentAngleIndex = (currentAngleIndex + dir + total) % total;
+      renderDetailGallery();
+    }
+
+    function closeDetailModal() {
+      document.getElementById("detail-backdrop").classList.remove("open");
+      document.body.classList.remove("modal-locked");
+    }
+
+    document.getElementById("detail-backdrop").addEventListener("click", e => {
+      if (e.target.id === "detail-backdrop") closeDetailModal();
+    });
+
+    /* ==========================================
+       4. SILLAGE INTERACTIVE LAB
+       ========================================== */
+    function selectSillageItem(idx) {
+      activeSillageIndex = idx;
+      const prod = PRODUCTS[SILLAGE_INDICES[idx]];
+      const isRu = currentLang === "ru";
+      const sec = document.getElementById("sillage-lab");
+
+      document.querySelectorAll(".sillage-tab").forEach((b, i) => {
+        b.classList.toggle("active", i === idx);
+      });
+
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!reduced) {
+        sec.classList.remove("rings-active");
+        void sec.offsetWidth;
+        sec.classList.add("rings-active");
+      }
+
+      document.getElementById("sillage-bg-word").textContent = prod.name.split(" ")[0].toUpperCase();
+      document.getElementById("sillage-title").textContent = `${prod.brand} ${prod.name}`;
+      document.getElementById("sillage-sub").textContent = isRu
+        ? `${prod.price}€ • Открыть карточку →`
+        : `${prod.price}€ • Details öffnen →`;
+      document.getElementById("sillage-img").style.backgroundImage = `url('${prod.photos[0]}')`;
+
+      document.getElementById("sillage-top-note").textContent = isRu ? prod.top_ru : prod.top_de;
+      document.getElementById("sillage-heart-note").textContent = isRu ? prod.heart_ru : prod.heart_de;
+      document.getElementById("sillage-base-note").textContent = isRu ? prod.base_ru : prod.base_de;
+      document.getElementById("sillage-set-info").textContent = (isRu ? prod.items_ru : prod.items_de).join(" + ");
+    }
+
+    function openDetailFromSillage() {
+      const prod = PRODUCTS[SILLAGE_INDICES[activeSillageIndex]];
+      openDetailModal(prod.id);
+    }
+
+    function openOrderModalFromSillage() {
+      const prod = PRODUCTS[SILLAGE_INDICES[activeSillageIndex]];
+      openOrderModal(prod.id);
+    }
+
+    /* ==========================================
+       5. ORBIT COMPASS MENU
+       ========================================== */
+    const orbitBtn = document.getElementById("orbit-btn");
+    const orbitNodes = document.querySelectorAll(".orbit-node");
+    const orbitSlides = document.querySelectorAll(".orbit-slide");
+
+    function positionOrbitNodes() {
+      if (window.innerWidth <= 680) return;
+      const radius = Math.min(260, Math.max(180, window.innerWidth * 0.2));
+      orbitNodes.forEach(node => {
+        const angleDeg = parseFloat(node.getAttribute("data-angle"));
+        const rad = (angleDeg * Math.PI) / 180;
+        const x = Math.round(Math.cos(rad) * radius);
+        const y = Math.round(Math.sin(rad) * radius);
+        node.style.transform = `translate3d(calc(-50% + ${x}px), calc(-50% + ${y}px), 0)`;
+      });
+    }
+
+    function toggleOrbitMenu(forceState) {
+      const isOpen = typeof forceState === "boolean"
+        ? forceState
+        : !document.documentElement.classList.contains("menu-open");
+      document.documentElement.classList.toggle("menu-open", isOpen);
+      document.body.classList.toggle("menu-locked", isOpen);
+      orbitBtn.setAttribute("aria-expanded", String(isOpen));
+      if (isOpen) positionOrbitNodes();
+    }
+
+    function closeOrbitAndFilter(cat) {
+      toggleOrbitMenu(false);
+      filterCatalog(cat);
+    }
+
+    orbitBtn.addEventListener("click", () => toggleOrbitMenu());
+    document.getElementById("orbit-wash").addEventListener("click", () => toggleOrbitMenu(false));
+
+    orbitNodes.forEach(node => {
+      node.addEventListener("mouseenter", () => {
+        const slideIdx = node.getAttribute("data-slide");
+        const cap = node.getAttribute("data-caption");
+        orbitSlides.forEach(s => {
+          s.classList.toggle("active", s.getAttribute("data-slide") === slideIdx);
+        });
+        if (cap) document.getElementById("orbit-preview-label").textContent = cap;
+      });
+    });
+
+    window.addEventListener("resize", positionOrbitNodes);
+    window.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        toggleOrbitMenu(false);
+        closeDetailModal();
+        closeOrderModal();
+      }
+    });
+
+    /* ==========================================
+       6. INSTAGRAM ORDER MODAL & CLIPBOARD
+       ========================================== */
+    function openOrderModal(prodId) {
+      const prod = PRODUCTS.find(p => p.id === prodId) || PRODUCTS[0];
+      const items = currentLang === "ru" ? prod.items_ru : prod.items_de;
+
+      if (currentLang === "ru") {
+        currentOrderString = `Здравствуйте, Оксана! Хочу заказать:\n• ${prod.brand} — ${prod.name} (${items.join(", ")})\n• Цена на сайте: ${prod.price}€\nПодскажите, пожалуйста, реквизиты и условия доставки.`;
+        document.getElementById("ig-copied-badge").textContent = "✓ Текст заказа скопирован в буфер";
+      } else {
+        currentOrderString = `Hallo Oksana! Ich möchte gerne bestellen:\n• ${prod.brand} — ${prod.name} (${items.join(", ")})\n• Preis auf der Website: ${prod.price}€\nBitte senden Sie mir die Zahlungs- und Versanddetails.`;
+        document.getElementById("ig-copied-badge").textContent = "✓ Bestelltext in die Zwischenablage kopiert";
+      }
+
+      document.getElementById("ig-message-preview").innerText = currentOrderString;
+      document.getElementById("ig-modal").classList.add("open");
+      copyCurrentOrderText();
+    }
+
+    function copyCurrentOrderText() {
+      if (navigator.clipboard && currentOrderString) {
+        navigator.clipboard.writeText(currentOrderString).catch(() => {});
+      }
+    }
+
+    function closeOrderModal() {
+      document.getElementById("ig-modal").classList.remove("open");
+    }
+
+    document.getElementById("ig-modal").addEventListener("click", e => {
+      if (e.target.id === "ig-modal") closeOrderModal();
+    });
+
+    /* ==========================================
+       7. FAQ & LANGUAGE SWITCHER
+       ========================================== */
+    function toggleFaq(btn) {
+      const item = btn.closest(".faq-item");
+      const ans = item.querySelector(".faq-a");
+      const isOpen = item.classList.contains("open");
+
+      document.querySelectorAll(".faq-item").forEach(el => {
+        el.classList.remove("open");
+        el.querySelector(".faq-a").style.maxHeight = "0px";
+      });
+
+      if (!isOpen) {
+        item.classList.add("open");
+        ans.style.maxHeight = ans.scrollHeight + "px";
+      }
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+      });
+
+      const dict = I18N[lang];
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key]) el.innerHTML = dict[key];
+      });
+
+      document.getElementById("search-input").placeholder = lang === "ru"
+        ? "Поиск по нотам или бренду: ваниль, роза, Gucci..."
+        : "Suche nach Noten oder Marke: Vanille, Rose, Gucci...";
+
+      renderCatalog();
+      selectSillageItem(activeSillageIndex);
+    }
+
+    /* ==========================================
+       8. INITIALIZE & ENTRANCE ANIMATION
+       ========================================== */
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".m-col").forEach(col => {
+        const children = Array.from(col.children);
+        children.forEach(cell => {
+          const clone = cell.cloneNode(true);
+          clone.setAttribute("aria-hidden", "true");
+          col.appendChild(clone);
+        });
+      });
+
+      renderCatalog();
+      selectSillageItem(0);
+
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!reduced && Element.prototype.animate) {
+        const EXPO = "cubic-bezier(0.16, 1, 0.3, 1)";
+        const QUINT = "cubic-bezier(0.22, 1, 0.36, 1)";
+
+        document.getElementById("top-hdr").animate([
+          { transform: "translate3d(0, calc(-100% - 32px), 0)" },
+          { transform: "translate3d(0, 0, 0)" }
+        ], { duration: 900, easing: EXPO, fill: "both" });
+
+        document.querySelectorAll("#hero-h1 .ln").forEach((ln, idx) => {
+          ln.animate([
+            { transform: "translateY(110%)" },
+            { transform: "translateY(0%)" }
+          ], { duration: 880, delay: 200 + idx * 80, easing: EXPO, fill: "both" });
+        });
+
+        document.getElementById("hero-lead").animate([
+          { opacity: 0, transform: "translateY(14px)" },
+          { opacity: 1, transform: "translateY(0)" }
+        ], { duration: 660, delay: 520, easing: QUINT, fill: "both" });
+      }
+    });
+  </script>
+</body>
+</html>
